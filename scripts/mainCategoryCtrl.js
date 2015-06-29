@@ -4,7 +4,7 @@
 angular.module('luccaApp').controller('mainCategoryController', function($scope, $http, $resource, GetData){
     $scope.categories = "";
 
-    $scope.categories = GetData.returnedData.get('mainCategories').$promise.then(function(data) {
+    $scope.categories = GetData.returnedData.get({id:'mainCategories'}).$promise.then(function(data) {
         $scope.categories = data;
     });
 

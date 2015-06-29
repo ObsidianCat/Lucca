@@ -3,7 +3,7 @@ angular.module('luccaApp').controller('subCategoryController', function($scope, 
     $scope.param = $routeParams.param;
     console.log($scope.param);
 
-    $scope.subCategoryItems = GetData.returnedData.get('churches').$promise.then(function(data) {
+    $scope.subCategoryItems = GetData.returnedData.get({id:$scope.param}).$promise.then(function(data) {
         $scope.subCategoryItems = data;
     });
 
