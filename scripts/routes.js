@@ -8,6 +8,11 @@ angular.module('luccaApp')
             controller:'subCategoryController',
             controllerAs:'subCategoryCtrl'
         })
+        .when('/subcategory/:param/:param', {
+            templateUrl:'html-templates/sub-category.html',
+            controller:'subCategoryController',
+            controllerAs:'subCategoryCtrl'
+        })
         .when('/',{
                 templateUrl:'html-templates/main-categories.html',
                 controller: 'mainCategoryController',
