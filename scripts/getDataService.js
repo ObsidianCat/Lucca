@@ -6,6 +6,7 @@ angular.module('luccaApp').factory('GetData', ['$resource',
         return {
             returnedData: $resource('data/:id', {id: '@id'}, {
                 'get':    {method:'GET', isArray: true},
+                'getObject':    {method:'GET'},
                 'query': { method: 'GET', params: {}, isArray: true }
             })
         };

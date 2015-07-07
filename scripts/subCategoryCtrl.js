@@ -4,7 +4,7 @@ angular.module('luccaApp').controller('subCategoryController', function($scope, 
 
     $scope.subCategoryItems = GetData.returnedData.get({id:$scope.param}).$promise.then(function(data) {
         $scope.subCategoryItems = data;
-        console.log($scope.subCategoryItems);
+        //console.log($scope.subCategoryItems);
     });
 
     //str = str.replace(/\s/g, "+");
