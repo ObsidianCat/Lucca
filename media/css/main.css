@@ -1,0 +1,15 @@
+body
+{
+    margin:1rem;
+}
+.gallery li
+{
+    list-style: none;
+    display: inline-block;
+    margin: 0.5em;
+}
+.gallery li img
+{
+    cursor: pointer;
+}
+

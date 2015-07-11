@@ -6,6 +6,5 @@ angular.module('luccaApp').directive('reviewItem', function(){
             restrict:'E',
             templateUrl:'html-templates/review-item.html',
             controller:'reviewItemController'
-
         }
 })
