@@ -3,21 +3,24 @@
         <h2 class="main-title">{{item.basicDetails.mainTile}}</h2>
         <h3 class="main-sub-title">{{item.basicDetails.subTitle}}</h3>
         <p class="address">{{item.basicDetails.address}}</p>
-
     </section>
 
     <section class="description">
         {{item.description}}
     </section>
+
+    <section class="map">
+        <h3 class="reviews-titles"  ng-click="showHideToggler('map')">See on the map</h3>
+        <div class="map-box" ng-show="showHideFlags.map"></div>
+    </section>
+
     <section class="gallery">
         <gallery></gallery>
     </section>
-    <section class="map">
 
-    </section>
     <section class="reviews">
-        <h3 class="reviews-titles" ng-click="reviewFormCollapsed=!reviewFormCollapsed">Write your review</h3>
-        <div class="add-new-review" ng-show="reviewFormCollapsed">
+        <h3 class="reviews-titles"  ng-click="showHideToggler('addReviewForm')">Write your review</h3>
+        <div class="add-new-review" ng-show="showHideFlags.addReviewForm">
             <form>
                 <input type="text" id="nickname" name="nickname">
                 <input type="email" name="email" id="email">
@@ -34,8 +37,8 @@
                 <input type="submit" value="Submit">
             </form>
         </div>
-        <h3 class="reviews-titles"  ng-click="reviewsCollapsed=!reviewsCollapsed">Read visitors reviews</h3>
-        <div class="reviews-box" ng-show="reviewsCollapsed">
+        <h3 class="reviews-titles"  ng-click="showHideToggler('reviews')">Read visitors reviews</h3>
+        <div class="reviews-box" ng-show="showHideFlags.reviews">
             <div class="reviews-sorting">
             <p>Show review only with rating of</p>
             <select>
