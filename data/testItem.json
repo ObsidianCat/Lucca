@@ -13,7 +13,7 @@
 
   "gallery":{
     "thumbnailsImages":["cathedralExterior-thumb.jpg", "cathedralExterior-interior-thumb.jpg", "cathedralExterior-detail-thumb.jpg"],
-    "fullsizeImages":["cathedralExterior-full.jpeg", "cathedralExterior-interior-full.jpeg",  "cathedralExterior-detail-full.jpeg"]
+    "fullsizeImages":["cathedralExterior-full.jpg", "cathedralExterior-interior-full.jpg",  "cathedralExterior-detail-full.jpg"]
   },
 
   "reviews":[

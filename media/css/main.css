@@ -1,7 +1,8 @@
-body
+.main-wrapper
 {
-    margin:1rem;
+    margin: 1rem;
 }
+
 .gallery li
 {
     list-style: none;
@@ -13,3 +14,26 @@ body
     cursor: pointer;
 }
 
+.gallery .big-image img
+{
+    max-height: 30rem;
+}
+
+.reviews-box
+{
+    background-color: rgb(253, 247, 238);
+}
+
+.reviews-titles
+{
+    background-color: antiquewhite;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.add-new-review form input,
+.add-new-review form select,
+.add-new-review form textarea
+{
+    display: block;
+}
