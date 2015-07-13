@@ -18,12 +18,12 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
     };
 
     $scope.showHideToggler = function(targetName){
-        console.log($scope.showHideFlags['targetName']);
-        if($scope.showHideFlags['targetName']==false){
-            $scope.showHideFlags['targetName']=true;
+        console.log($scope.showHideFlags[targetName]);
+        if($scope.showHideFlags[targetName]==false){
+            $scope.showHideFlags[targetName]=true;
         }
         else{
-            $scope.showHideFlags['targetName']=false;
+            $scope.showHideFlags[targetName]=false;
         }
     }//end of show hide toggler
 
