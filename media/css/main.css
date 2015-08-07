@@ -1,3 +1,27 @@
+body
+{
+    padding: 0rem;
+    margin: 0rem;
+}
+header
+{
+    background-color: #aa1501;
+    color: white;
+    cursor: pointer;
+}
+
+header a
+{
+    color: white;
+    text-decoration: none;
+}
+
+header h1
+{
+    margin: 0em;
+    padding: 0.2em;
+}
+
 .main-wrapper
 {
     margin: 1rem;
@@ -37,3 +61,4 @@
 {
     display: block;
 }
+

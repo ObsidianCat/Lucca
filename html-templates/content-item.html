@@ -1,6 +1,6 @@
 <div id="content-item" >
     <section class="basic-details">
-        <h2 class="main-title">{{item.basicDetails.mainTile}}</h2>
+        <h1 class="main-title">{{item.basicDetails.mainTile}}</h1>
         <h3 class="main-sub-title">{{item.basicDetails.subTitle}}</h3>
         <p class="address">{{item.basicDetails.address}}</p>
     </section>
@@ -19,7 +19,7 @@
     </section>
 
     <section class="reviews">
-        <h3 class="reviews-titles"  ng-click="showHideToggler('addReviewForm')">Write your review</h3>
+        <h3 class="reviews-titles"  ng-click="showHideToggler('addReviewForm')" scroll-on-click>Write your review</h3>
         <div class="add-new-review" ng-show="showHideFlags.addReviewForm">
             <form>
                 <input type="text" id="nickname" name="nickname">
@@ -37,7 +37,7 @@
                 <input type="submit" value="Submit">
             </form>
         </div>
-        <h3 class="reviews-titles"  ng-click="showHideToggler('reviews')">Read visitors reviews</h3>
+        <h3 class="reviews-titles"  ng-click="showHideToggler('reviews');" scroll-on-click>Read visitors reviews</h3>
         <div class="reviews-box" ng-show="showHideFlags.reviews">
             <div class="reviews-sorting">
             <p>Show review only with rating of</p>

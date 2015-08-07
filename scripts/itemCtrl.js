@@ -1,4 +1,4 @@
-angular.module('luccaApp').controller('itemController', function($scope, $http, $resource, $routeParams, GetData){
+angular.module('luccaApp').controller('itemController', function($scope, $http, $resource, $routeParams,  GetData){
     $scope.item;
     $scope.param = 'testItem.json';
     $scope.activeImg = 0;
@@ -12,7 +12,6 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
     };
 
 
-
     $scope.setActiveImg = function($index){
         $scope.activeImg = $index;
     };
@@ -21,10 +20,23 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
         console.log($scope.showHideFlags[targetName]);
         if($scope.showHideFlags[targetName]==false){
             $scope.showHideFlags[targetName]=true;
+            //$timeout(function() {
+            //    $scope.jumpToLocation(targetName);
+            //}, 3000);
+
         }
         else{
             $scope.showHideFlags[targetName]=false;
         }
+
+        //$scope.jumpToLocation(targetName);
+
     }//end of show hide toggler
+
+    //$scope.jumpToLocation = function (sectionName){
+    //    $location.hash(sectionName);
+    //    $anchorScroll();
+    //    console.log(sectionName);
+    //}
 
 });
