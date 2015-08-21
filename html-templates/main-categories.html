@@ -4,5 +4,19 @@
     </li>
 </ul>
 <section id="weather_widget">
-    <h3>Lucca Forecast</h3>
+    <p ng-click="changeWeatherUnits()">
+        Lucca Forecast
+        <span ng-click="changeWeatherUnits('C')">C</span>
+        <span ng-click="changeWeatherUnits('F')">F</span>
+    </p>
+    <div class="days-weather" >
+        <ul ng-repeat="weatherDay in weather.list">
+            <li class="title">
+                <span id="weather-today" ng-show="$index == 0">Today </span>{{date | date:'EEEE yyyy-MM-dd'}}
+            </li>
+            <li><img ng-src="http://openweathermap.org/img/w/{{weatherDay.weather[0].icon}}.png"></li>
+            <li><p>Day</p>{{weatherDay.temp.day | number:0}} {{weatherUnits}}</li>
+            <li><p>Night</p>{{weatherDay.temp.night | number:0}} {{weatherUnits}}</li>
+        </ul>
+    </div>
 </section>

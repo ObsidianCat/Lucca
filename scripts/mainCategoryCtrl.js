@@ -8,8 +8,9 @@ angular.module('luccaApp').controller('mainCategoryController', function($scope,
         $scope.categories = data;
     });
 
+    $scope.date = new Date();
 
-    $http.get(WEATHER_URL.F).
+    $http.get(WEATHER_URL.C).
         success(function(data, status, headers, config) {
             $scope.weather = data;
             console.log($scope.weather);
@@ -18,8 +19,8 @@ angular.module('luccaApp').controller('mainCategoryController', function($scope,
             // log error
             // });
      });
-
-    setWeather = function(weatherData){
+    $scope.weatherUnits = WEATHER_URL.cText;
+    $scope.setWeather = function(weatherData){
 
     }
 

@@ -2,6 +2,7 @@ body
 {
     padding: 0rem;
     margin: 0rem;
+    background-color: #F7F7F7;
 }
 header
 {
@@ -25,6 +26,21 @@ header h1
 .main-wrapper
 {
     margin: 1rem;
+}
+
+#main-categories,
+#sub-category-items
+{
+    list-style: none;
+    padding-left: 0px;
+    font-size: 1.5rem;
+}
+
+#main-categories a,
+#sub-category-items a
+{
+    text-decoration: none;
+    color: #993300;
 }
 
 .gallery li
@@ -62,3 +78,13 @@ header h1
     display: block;
 }
 
+/*START Weather*/
+div.days-weather ul
+{
+    display: inline-block;
+    width: 20%;
+    list-style: none;
+    padding-left: 0px;
+}
+
+/*END Weather*/
