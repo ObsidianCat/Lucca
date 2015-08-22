@@ -1,5 +1,13 @@
 <?
+//open database connection
+include_once('database_connect.php');
 $id = $_GET['id'];
+
+
+
+
+  // Close database connection
+  mysqli_close($connection);
 ?>
 {
 "basicDetails":{
