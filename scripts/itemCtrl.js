@@ -4,6 +4,7 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
     $scope.activeImg = 0;
     $scope.item = GetData.returnedData.getObject({res:$scope.param, id:1}).$promise.then(function(data){
         $scope.item = data;
+        console.log(data);
     });
     $scope.showHideFlags = {
         map:false,
