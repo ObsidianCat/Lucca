@@ -87,4 +87,9 @@ div.days-weather ul
     padding-left: 0px;
 }
 
+
+div.days-weather .title
+{
+    font-weight: bold;
+}
 /*END Weather*/
