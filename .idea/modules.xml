@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Lucca.iml" filepath="$PROJECT_DIR$/.idea/Lucca.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/lucca_guide.iml" filepath="$PROJECT_DIR$/.idea/lucca_guide.iml" />
+=======
+>>>>>>> origin/master
     </modules>
   </component>
 </project>
