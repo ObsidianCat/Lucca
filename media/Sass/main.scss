@@ -1,71 +1,93 @@
-body
-{
+$c-brick-red:#aa1501;
+$-brick-red-light:#993300;
+$c-base-grey: #F7F7F7;
+$btn-sm-screen-width: 100%;
+
+@mixin no-padding-margin() {
   padding: 0rem;
   margin: 0rem;
-  background-color: #F7F7F7;
 }
-header
-{
-  background-color: #aa1501;
+
+
+body {
+  @include no-padding-margin();
+  background-color: $c-base-grey;
+  font-size: 100%;
+}
+
+.main-title{
+  font-size: 1.5rem;
+}
+header {
+  background-color: $c-brick-red;
   color: white;
   cursor: pointer;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  h1 {
+    margin: 0em;
+    padding: 0.2em;
+  }
+
 }
 
-header a
-{
-  color: white;
-  text-decoration: none;
-}
 
-header h1
-{
-  margin: 0em;
-  padding: 0.2em;
-}
-
-.main-wrapper
-{
+.main-wrapper {
   margin: 1rem;
 }
 
 #main-categories,
-#sub-category-items
-{
+#sub-category-items {
   list-style: none;
   padding-left: 0px;
   font-size: 1.5rem;
+  a{
+    text-decoration: none;
+    color: $-brick-red-light;
+
+    button{
+      width: $btn-sm-screen-width;
+    }
+  }
 }
 
-#main-categories a,
-#sub-category-items a
-{
-  text-decoration: none;
-  color: #993300;
+#content-item{
+  md-card-content{
+    padding: 0px 16px 0px 16px;
+  }
 }
 
-.gallery li
-{
-  list-style: none;
-  display: inline-block;
-  margin: 0.5em;
-}
-.gallery li img
-{
-  cursor: pointer;
+p.address{
+  @include no-padding-margin();
+  font-style: italic;
+  font-size: 0.8rem;
 }
 
-.gallery .big-image img
-{
-  max-height: 30rem;
+
+.gallery {
+  li {
+    list-style: none;
+    display: inline-block;
+    margin: 0.5em;
+  }
+  li img {
+    cursor: pointer;
+  }
+
+  .big-image img {
+    max-height: 30rem;
+  }
 }
 
-.reviews-box
-{
+
+
+.reviews-box {
   background-color: rgb(253, 247, 238);
 }
 
-.reviews-titles
-{
+.reviews-titles {
   background-color: antiquewhite;
   cursor: pointer;
   padding: 0.5rem;
@@ -73,23 +95,21 @@ header h1
 
 .add-new-review form input,
 .add-new-review form select,
-.add-new-review form textarea
-{
+.add-new-review form textarea {
   display: block;
 }
 
 /*START Weather*/
-div.days-weather ul
-{
-  display: inline-block;
-  width: 20%;
-  list-style: none;
-  padding-left: 0px;
+div.days-weather {
+  ul {
+    display: inline-block;
+    width: 20%;
+    list-style: none;
+    padding-left: 0px;
+  }
+  .title {
+    font-weight: bold;
+  }
 }
 
-
-div.days-weather .title
-{
-  font-weight: bold;
-}
 /*END Weather*/

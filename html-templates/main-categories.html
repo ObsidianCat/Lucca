@@ -1,6 +1,12 @@
-<ul id="main-categories" >
-    <li ng-repeat="category in categories" id="{{category.categoryName.toLowerCase()}}">
-        <a href="#subcategory/{{category.categoryName.toLowerCase()}}">{{category.categoryName}}</a>
+<ul layout="column" id="main-categories" >
+    <li flex ng-repeat="category in categories" id="{{category.categoryName.toLowerCase()}}">
+
+            <a flex href="#subcategory/{{category.categoryName.toLowerCase()}}">
+                <md-button flex class="md-raised md-cornered">
+                {{category.categoryName}}
+                </md-button>
+
+            </a>
     </li>
 </ul>
 <section id="weather_widget">

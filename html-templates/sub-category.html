@@ -1,4 +1,8 @@
-<h2>Sub Category</h2>
+<!--<h2>Sub Category</h2>-->
 <ul id="sub-category-items">
-    <li ng-repeat="item in subCategoryItems" id="item-{{$index+1}}"><a href="#item/{{$index+1}}">{{item.itemName}}</a></li>
+    <li ng-repeat="item in subCategoryItems" id="item-{{$index+1}}">
+        <a href="#item/{{$index+1}}">
+            <md-button class="md-raised md-cornered">{{item.itemName}}</md-button>
+        </a>
+    </li>
 </ul>

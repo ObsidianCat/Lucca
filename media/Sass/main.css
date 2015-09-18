@@ -1,20 +1,22 @@
 body {
   padding: 0rem;
   margin: 0rem;
-  background-color: #F7F7F7; }
+  background-color: #F7F7F7;
+  font-size: 100%; }
+
+.main-title {
+  font-size: 1.5rem; }
 
 header {
   background-color: #aa1501;
   color: white;
   cursor: pointer; }
-
-header a {
-  color: white;
-  text-decoration: none; }
-
-header h1 {
-  margin: 0em;
-  padding: 0.2em; }
+  header a {
+    color: white;
+    text-decoration: none; }
+  header h1 {
+    margin: 0em;
+    padding: 0.2em; }
 
 .main-wrapper {
   margin: 1rem; }
@@ -24,20 +26,29 @@ header h1 {
   list-style: none;
   padding-left: 0px;
   font-size: 1.5rem; }
+  #main-categories a,
+  #sub-category-items a {
+    text-decoration: none;
+    color: #993300; }
+    #main-categories a button,
+    #sub-category-items a button {
+      width: 100%; }
 
-#main-categories a,
-#sub-category-items a {
-  text-decoration: none;
-  color: #993300; }
+#content-item md-card-content {
+  padding: 0px 16px 0px 16px; }
+
+p.address {
+  padding: 0rem;
+  margin: 0rem;
+  font-style: italic;
+  font-size: 0.8rem; }
 
 .gallery li {
   list-style: none;
   display: inline-block;
   margin: 0.5em; }
-
 .gallery li img {
   cursor: pointer; }
-
 .gallery .big-image img {
   max-height: 30rem; }
 
@@ -60,7 +71,6 @@ div.days-weather ul {
   width: 20%;
   list-style: none;
   padding-left: 0px; }
-
 div.days-weather .title {
   font-weight: bold; }
 

@@ -1,55 +1,91 @@
-<div id="content-item" >
+<div layout="column" id="content-item" >
+    <md-content class="md-padding">
+
+        <md-whiteframe class="md-whiteframe-z2" layout layout-align="center center">
+            <h1 class="main-title">{{item.response[0].mainTitle}}</h1>
+        </md-whiteframe>
+
     <section class="basic-details">
-        <h1 class="main-title">{{item.basicDetails.mainTile}}</h1>
-        <h3 class="main-sub-title">{{item.basicDetails.subTitle}}</h3>
-        <p class="address">{{item.basicDetails.address}}</p>
+        <md-card>
+            <md-card-content>
+                <h3 class="main-sub-title">{{item.response[0].subTitle}}</h3>
+                <p class="address">{{item.response[0].address}}</p>
+                <p>{{item.response[0].description}}</p>
+            </md-card-content>
+        </md-card>
     </section>
 
-    <section class="description">
-        {{item.description}}
-    </section>
+    <!--<section class="description">-->
+        <!--<md-card>-->
+            <!--<md-card-content>-->
+                <!-- -->
+            <!--</md-card-content>-->
+        <!--</md-card>-->
+    <!--</section>-->
 
     <section class="map">
+        <md-card>
         <h3 class="reviews-titles"  ng-click="showHideToggler('map')">See on the map</h3>
-        <div class="map-box" ng-show="showHideFlags.map"></div>
+            <md-card-content>
+                 <div class="map-box" ng-show="showHideFlags.map"></div>
+            </md-card-content>
+        </md-card>
     </section>
 
     <section class="gallery">
-        <gallery></gallery>
+        <md-card>
+            <h3 class="reviews-titles"  ng-click="showHideToggler('gallery')">Gallery</h3>
+            <md-card-content>
+            <gallery ng-show="showHideFlags.gallery"></gallery>
+            </md-card-content>
+        </md-card>
     </section>
 
     <section class="reviews">
-        <h3 class="reviews-titles"  ng-click="showHideToggler('addReviewForm')" scroll-on-click>Write your review</h3>
-        <div class="add-new-review" ng-show="showHideFlags.addReviewForm">
-            <form>
-                <input type="text" id="nickname" name="nickname">
-                <input type="email" name="email" id="email">
-                <input type="text" name="origin-country" id="origin-country">
-                <input type="date" name="date-of-visit" id="date-of-visit">
-                <select>
-                    <option value="stars-5">5 stars</option>
-                    <option value="stars-4">4 stars</option>
-                    <option value="stars-3">3 stars</option>
-                    <option value="stars-2">2 stars</option>
-                    <option value="stars-1">1 stars</option>
-                </select>
-                <textarea name="message" rows="10" cols="30"></textarea>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-        <h3 class="reviews-titles"  ng-click="showHideToggler('reviews');" scroll-on-click>Read visitors reviews</h3>
-        <div class="reviews-box" ng-show="showHideFlags.reviews">
-            <div class="reviews-sorting">
-            <p>Show review only with rating of</p>
-            <select>
-                <option value="stars-5">5 stars</option>
-                <option value="stars-4">4 stars</option>
-                <option value="stars-3">3 stars</option>
-                <option value="stars-2">2 stars</option>
-                <option value="stars-1">1 stars</option>
-            </select>
-        </div>
-            <review-item ng-repeat="review in item.reviews"></review-item>
-        </div>
+        <md-card>
+            <h3 class="reviews-titles"  ng-click="showHideToggler('addReviewForm')" scroll-on-click>Write your review</h3>
+            <md-card-content>
+                <div class="add-new-review" ng-show="showHideFlags.addReviewForm">
+                <form>
+                    <input type="text" id="nickname" name="nickname">
+                    <input type="email" name="email" id="email">
+                    <input type="text" name="origin-country" id="origin-country">
+                    <input type="date" name="date-of-visit" id="date-of-visit">
+                    <select>
+                        <option value="stars-5">5 stars</option>
+                        <option value="stars-4">4 stars</option>
+                        <option value="stars-3">3 stars</option>
+                        <option value="stars-2">2 stars</option>
+                        <option value="stars-1">1 stars</option>
+                    </select>
+                    <textarea name="message" rows="10" cols="30"></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+                </div>
+            </md-card-content>
+        </md-card>
+
+        <md-card>
+            <h3 class="reviews-titles"  ng-click="showHideToggler('reviews');" scroll-on-click>
+                Read visitors reviews
+            </h3>
+            <md-card-content>
+                <div class="reviews-box" ng-show="showHideFlags.reviews">
+                    <div class="reviews-sorting">
+                        <p class="selected">Show all reviews</p>
+                        <p>Show reviews only with rating of</p>
+                        <select>
+                            <option value="stars-5">5 stars</option>
+                            <option value="stars-4">4 stars</option>
+                            <option value="stars-3">3 stars</option>
+                            <option value="stars-2">2 stars</option>
+                            <option value="stars-1">1 stars</option>
+                        </select>
+                </div>
+                    <review-item ng-repeat="review in item.response[1]"></review-item>
+                </div>
+            </md-card-content>
+        </md-card>
     </section>
+    </md-content>
 </div>
