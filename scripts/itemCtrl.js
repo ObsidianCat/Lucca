@@ -34,9 +34,25 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
 
     }//end of show hide toggler
 
-    //$scope.jumpToLocation = function (sectionName){
-    //    $location.hash(sectionName);
-    //    $anchorScroll();
-    //    console.log(sectionName);
+    //$scope.reviewModel = {
     //}
+
+    //submit review for current item
+    $scope.submitReview = function(currentReview){
+
+
+        $http.post('php/review_form_proceeding.php', currentReview).
+            then(function(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log(response);
+                console.log('success');
+            }, function(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                console.log('failed');
+            });
+    }
+
+
 });

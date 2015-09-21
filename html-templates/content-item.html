@@ -46,17 +46,17 @@
             <h3 class="reviews-titles"  ng-click="showHideToggler('addReviewForm')" scroll-on-click>Write your review</h3>
             <md-card-content>
                 <div class="add-new-review" ng-show="showHideFlags.addReviewForm">
-                <form action="php/review_form_proceeding.php" method="post">
+                <form ng-submit="submitReview(reviewModel)">
                     <label>Nickname</label>
-                    <input type="text" id="nickname" name="nickname" placeholder="Lulius" />
+                    <input ng-model="reviewModel.nickname" type="text" id="nickname" name="nickname" placeholder="Lulius" />
                     <label>Email</label>
-                    <input type="email" name="email" id="email" placeholder="example@example.com" />
+                    <input ng-model="reviewModel.email" type="email" name="email" id="email" placeholder="example@example.com" />
                     <label>Country of origin</label>
-                    <input type="text" name="origin-country" id="origin-country" placeholder="USA" />
+                    <input ng-model="reviewModel.originCountry" type="text" name="origin-country" id="origin-country" placeholder="USA" />
                     <label>Date of your visit</label>
-                    <input type="date" name="date-of-visit" id="date-of-visit" placeholder="date of visit"/>
+                    <input ng-model="reviewModel.dateOfVisit" type="date" name="date-of-visit" id="date-of-visit" placeholder="date of visit"/>
                     <label>Rate the attraction</label>
-                    <select name="rating">
+                    <select ng-model="reviewModel.rating" name="rating">
                         <option value="stars-5">5 stars</option>
                         <option value="stars-4">4 stars</option>
                         <option value="stars-3">3 stars</option>
@@ -64,8 +64,8 @@
                         <option value="stars-1">1 stars</option>
                     </select>
                     <label>Tell us about your visit</label>
-                    <textarea name="message" rows="10" cols="30"  placeholder="..."></textarea>
-                    <input type="hidden" name="item-id" id="item-id" value="1">
+                    <textarea ng-model="reviewModel.message" name="message" rows="10" cols="30"  placeholder="..."></textarea>
+                    <input ng-model="reviewModel.itemId" type="hidden" name="item-id" id="item-id" value="1">
                     <input type="submit" value="Submit" name="submit">
                 </form>
                 </div>
