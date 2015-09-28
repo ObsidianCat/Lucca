@@ -81,23 +81,29 @@ p.address{
   }
 }
 
+.reviews{
+  form #item-id{
+    display: none;
+  }
 
+  .reviews-box {
+    background-color: rgb(253, 247, 238);
+  }
 
-.reviews-box {
-  background-color: rgb(253, 247, 238);
+  .reviews-titles {
+    background-color: antiquewhite;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .add-new-review form input,
+  .add-new-review form select,
+  .add-new-review form textarea {
+    display: block;
+  }
 }
 
-.reviews-titles {
-  background-color: antiquewhite;
-  cursor: pointer;
-  padding: 0.5rem;
-}
 
-.add-new-review form input,
-.add-new-review form select,
-.add-new-review form textarea {
-  display: block;
-}
 
 /*START Weather*/
 div.days-weather {

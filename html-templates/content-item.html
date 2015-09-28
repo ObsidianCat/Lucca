@@ -46,7 +46,7 @@
             <h3 class="reviews-titles"  ng-click="showHideToggler('addReviewForm')" scroll-on-click>Write your review</h3>
             <md-card-content>
                 <div class="add-new-review" ng-show="showHideFlags.addReviewForm">
-                <form ng-submit="submitReview(reviewModel)">
+                <form ng-hide="reviewForm.$submitted" name="reviewForm" ng-submit="submitReview(reviewModel)">
                     <label>Nickname</label>
                     <input ng-model="reviewModel.nickname" type="text" id="nickname" name="nickname" placeholder="Lulius" />
                     <label>Email</label>
@@ -65,9 +65,9 @@
                     </select>
                     <label>Tell us about your visit</label>
                     <textarea ng-model="reviewModel.message" name="message" rows="10" cols="30"  placeholder="..."></textarea>
-                    <input ng-model="reviewModel.itemId" type="hidden" name="item-id" id="item-id" value="1">
                     <input type="submit" value="Submit" name="submit">
                 </form>
+                    <p ng-show="reviewForm.$submitted" class="review-submit-message"></p>
                 </div>
             </md-card-content>
         </md-card>

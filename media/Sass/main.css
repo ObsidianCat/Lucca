@@ -52,17 +52,17 @@ p.address {
 .gallery .big-image img {
   max-height: 30rem; }
 
-.reviews-box {
+.reviews form #item-id {
+  display: none; }
+.reviews .reviews-box {
   background-color: #fdf7ee; }
-
-.reviews-titles {
+.reviews .reviews-titles {
   background-color: antiquewhite;
   cursor: pointer;
   padding: 0.5rem; }
-
-.add-new-review form input,
-.add-new-review form select,
-.add-new-review form textarea {
+.reviews .add-new-review form input,
+.reviews .add-new-review form select,
+.reviews .add-new-review form textarea {
   display: block; }
 
 /*START Weather*/

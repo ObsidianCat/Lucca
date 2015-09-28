@@ -39,20 +39,26 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
 
     //submit review for current item
     $scope.submitReview = function(currentReview){
-
-
+        currentReview.itemId =1;
         $http.post('php/review_form_proceeding.php', currentReview).
             then(function(response) {
                 // this callback will be called asynchronously
                 // when the response is available
-                console.log(response);
-                console.log('success');
+                console.log(response.data);
+                $scope.reviewSuccess();
+                $('.review-submit-message').text(response.data);
             }, function(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
-                console.log('failed');
+                $('.review-submit-message').text(response.data);
             });
     }
+    $scope.reviewSuccess = function(){
+        $scope.reviewModel={};
+        $scope.reviewForm.$setPristine();
+        $scope.reviewForm.$setUntouched();
+        $scope.reviewForm.$setSubmitted();
 
+    }
 
 });
