@@ -75,15 +75,17 @@ p.address{
 .gallery {
   li {
     list-style: none;
-    display: inline-block;
+    display: inline;
     margin: 0.5em;
+
   }
   li img {
     cursor: pointer;
+    height: 5rem;
   }
 
   .big-image img {
-    max-height: 30rem;
+    max-height: 25rem;
   }
 }
 

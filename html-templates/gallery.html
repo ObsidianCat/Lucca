@@ -1,5 +1,5 @@
 <ul id="thumbnails">
-    <li ng-click="setActiveImg($index)" ng-repeat="thumb in item.gallery.thumbnailsImages" class="thumb{{$index}}"><img ng-src="media/images/{{thumb}}"/></li>
+    <li ng-click="setActiveImg($index)" ng-repeat="thumb in gallery" class="thumb{{$index}}"><img ng-src="media/images/{{thumb}}"/></li>
 </ul>
 
-<div class="big-image"><img ng-src="media/images/{{item.gallery.fullsizeImages[activeImg]}}"/></div>
+<div class="big-image"><img ng-src="media/images/{{gallery[activeImg]}}"/></div>

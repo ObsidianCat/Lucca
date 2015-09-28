@@ -49,12 +49,13 @@ p.address {
 
 .gallery li {
   list-style: none;
-  display: inline-block;
+  display: inline;
   margin: 0.5em; }
 .gallery li img {
-  cursor: pointer; }
+  cursor: pointer;
+  height: 5rem; }
 .gallery .big-image img {
-  max-height: 30rem; }
+  max-height: 25rem; }
 
 .reviews form #item-id {
   display: none; }

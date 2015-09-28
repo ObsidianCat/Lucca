@@ -12,6 +12,17 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
         gallery:false
     };
 
+    $scope.gallery = ['cathedralExterior-detail-full.jpg','cathedralExterior-full.jpg','cathedralExterior-interior-full.jpg'];
+
+    $scope.createMap = function(){
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+            });
+        }
+    };
 
     $scope.setActiveImg = function($index){
         $scope.activeImg = $index;
@@ -29,9 +40,6 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
         else{
             $scope.showHideFlags[targetName]=false;
         }
-
-        //$scope.jumpToLocation(targetName);
-
     };//end of show hide toggler
 
     //$scope.reviewModel = {

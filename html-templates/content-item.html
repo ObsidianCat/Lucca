@@ -15,28 +15,25 @@
         </md-card>
     </section>
 
-    <!--<section class="description">-->
-        <!--<md-card>-->
-            <!--<md-card-content>-->
-                <!-- -->
-            <!--</md-card-content>-->
-        <!--</md-card>-->
-    <!--</section>-->
-
     <section class="map">
         <md-card>
-        <h3 class="md-title item-titles"  ng-click="showHideToggler('map')">See on the map</h3>
+        <h3 class="md-title item-titles"  ng-click="showHideToggler('map')" scroll-on-click>See on the map</h3>
             <md-card-content>
-                 <div class="map-box" ng-show="showHideFlags.map"></div>
+                 <div class="map-box" ng-show="showHideFlags.map">
+                     <div id="map"></div>
+                 </div>
             </md-card-content>
         </md-card>
     </section>
 
     <section class="gallery">
         <md-card>
-            <h3 class="md-title item-titles"  ng-click="showHideToggler('gallery')">Gallery</h3>
+            <h3 class="md-title item-titles"  ng-click="showHideToggler('gallery')" scroll-on-click>Gallery</h3>
             <md-card-content>
-            <gallery ng-show="showHideFlags.gallery"></gallery>
+                <div ng-show="showHideFlags.gallery">
+                    <gallery ></gallery>
+
+                </div>
             </md-card-content>
         </md-card>
     </section>
