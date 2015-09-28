@@ -57,6 +57,12 @@ header {
   md-card-content{
     padding: 0px 16px 0px 16px;
   }
+  .item-titles {
+    background-color: antiquewhite;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
 }
 
 p.address{
@@ -90,12 +96,6 @@ p.address{
     background-color: rgb(253, 247, 238);
   }
 
-  .reviews-titles {
-    background-color: antiquewhite;
-    cursor: pointer;
-    padding: 0.5rem;
-  }
-
   .add-new-review form input,
   .add-new-review form select,
   .add-new-review form textarea {
@@ -106,15 +106,13 @@ p.address{
 
 
 /*START Weather*/
-div.days-weather {
-  ul {
+section#weather_widget {
+  .weather-details{
     display: inline-block;
-    width: 20%;
-    list-style: none;
-    padding-left: 0px;
+    margin-right: 1rem;
   }
-  .title {
-    font-weight: bold;
+  img{
+    display:block;
   }
 }
 

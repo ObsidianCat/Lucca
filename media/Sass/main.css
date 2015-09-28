@@ -36,6 +36,10 @@ header {
 
 #content-item md-card-content {
   padding: 0px 16px 0px 16px; }
+#content-item .item-titles {
+  background-color: antiquewhite;
+  cursor: pointer;
+  padding: 0.5rem; }
 
 p.address {
   padding: 0rem;
@@ -56,23 +60,17 @@ p.address {
   display: none; }
 .reviews .reviews-box {
   background-color: #fdf7ee; }
-.reviews .reviews-titles {
-  background-color: antiquewhite;
-  cursor: pointer;
-  padding: 0.5rem; }
 .reviews .add-new-review form input,
 .reviews .add-new-review form select,
 .reviews .add-new-review form textarea {
   display: block; }
 
 /*START Weather*/
-div.days-weather ul {
+section#weather_widget .weather-details {
   display: inline-block;
-  width: 20%;
-  list-style: none;
-  padding-left: 0px; }
-div.days-weather .title {
-  font-weight: bold; }
+  margin-right: 1rem; }
+section#weather_widget img {
+  display: block; }
 
 /*END Weather*/
 

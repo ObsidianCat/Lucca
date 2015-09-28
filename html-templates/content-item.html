@@ -25,7 +25,7 @@
 
     <section class="map">
         <md-card>
-        <h3 class="reviews-titles"  ng-click="showHideToggler('map')">See on the map</h3>
+        <h3 class="md-title item-titles"  ng-click="showHideToggler('map')">See on the map</h3>
             <md-card-content>
                  <div class="map-box" ng-show="showHideFlags.map"></div>
             </md-card-content>
@@ -34,7 +34,7 @@
 
     <section class="gallery">
         <md-card>
-            <h3 class="reviews-titles"  ng-click="showHideToggler('gallery')">Gallery</h3>
+            <h3 class="md-title item-titles"  ng-click="showHideToggler('gallery')">Gallery</h3>
             <md-card-content>
             <gallery ng-show="showHideFlags.gallery"></gallery>
             </md-card-content>
@@ -43,7 +43,7 @@
 
     <section class="reviews">
         <md-card>
-            <h3 class="reviews-titles"  ng-click="showHideToggler('addReviewForm')" scroll-on-click>Write your review</h3>
+            <h3 class="md-title item-titles"  ng-click="showHideToggler('addReviewForm')" scroll-on-click>Write your review</h3>
             <md-card-content>
                 <div class="add-new-review" ng-show="showHideFlags.addReviewForm">
                 <form ng-hide="reviewForm.$submitted" name="reviewForm" ng-submit="submitReview(reviewModel)">
@@ -73,7 +73,7 @@
         </md-card>
 
         <md-card>
-            <h3 class="reviews-titles"  ng-click="showHideToggler('reviews');" scroll-on-click>
+            <h3 class="md-title item-titles"  ng-click="showHideToggler('reviews');" scroll-on-click>
                 Read visitors reviews
             </h3>
             <md-card-content>

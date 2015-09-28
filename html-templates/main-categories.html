@@ -10,20 +10,58 @@
     </li>
 </ul>
 <section id="weather_widget">
+    <md-content class="md-padding">
     <p ng-click="changeWeatherUnits()">
         Lucca Forecast
         <!--<span ng-click="changeWeatherUnits('C')">C</span>-->
         <!--<span ng-click="changeWeatherUnits('F')">F</span>-->
     </p>
-    <div class="days-weather" >
-        <ul ng-repeat="weatherDay in weather.list">
-            <li class="title">
-                {{weatherDates[$index]}}<span id="weather-today" ng-show="$index == 0"> (Today)</span>
-            </li>
-            <!--<li>{{weatherDay.weather[0]['main']}}</li>-->
-            <li><img ng-src="http://openweathermap.org/img/w/{{weatherDay.weather[0].icon}}.png"></li>
-            <li><p>Day</p>{{weatherDay.temp.day | number:0}} {{weatherUnits}}</li>
-            <li><p>Night</p>{{weatherDay.temp.night | number:0}} {{weatherUnits}}</li>
-        </ul>
-    </div>
+    <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab ng-repeat="weatherDay in weather.list">
+                <md-tab-label>{{weatherDates[$index]}}</md-tab-label>
+                <!--<div class="days-weather" >-->
+                <md-tab-body layout="column" >
+                    <img ng-src="http://openweathermap.org/img/w/{{weatherDay.weather[0].icon}}.png"/>
+                        <div class="weather-details">
+                            <p>Morn</p>
+                            <p>{{weatherDay.temp.morn | number:0}} {{weatherUnits}}</p>
+                        </div>
+                        <div class="weather-details">
+                            <p>Day</p>
+                            <p>{{weatherDay.temp.day | number:0}} {{weatherUnits}}</p>
+                        </div>
+                        <div class="weather-details">
+                            <p>Eve</p>
+                            <p>{{weatherDay.temp.eve | number:0}} {{weatherUnits}}</p>
+                        </div>
+                        <div class="weather-details">
+                            <p>Night</p>
+                            <p>{{weatherDay.temp.night | number:0}} {{weatherUnits}}</p>
+                        </div>
+                </md-tab-body>
+                <!--</div>-->
+            </md-tab>
+        </md-tabs>
+    </md-content>
 </section>
+
+
+<!--<section id="weather_widget">-->
+        <!--<p ng-click="changeWeatherUnits()">-->
+            <!--Lucca Forecast-->
+            <!--&lt;!&ndash;<span ng-click="changeWeatherUnits('C')">C</span>&ndash;&gt;-->
+            <!--&lt;!&ndash;<span ng-click="changeWeatherUnits('F')">F</span>&ndash;&gt;-->
+        <!--</p>-->
+
+        <!--<div class="days-weather" >-->
+            <!--<ul ng-repeat="weatherDay in weather.list">-->
+                <!--<li class="title">-->
+                    <!--{{weatherDates[$index]}}<span id="weather-today" ng-show="$index == 0"> (Today)</span>-->
+                <!--</li>-->
+                <!--&lt;!&ndash;<li>{{weatherDay.weather[0]['main']}}</li>&ndash;&gt;-->
+                <!--<li><img ng-src="http://openweathermap.org/img/w/{{weatherDay.weather[0].icon}}.png"></li>-->
+                <!--<li><p>Day</p>{{weatherDay.temp.day | number:0}} {{weatherUnits}}</li>-->
+                <!--<li><p>Night</p>{{weatherDay.temp.night | number:0}} {{weatherUnits}}</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+<!--</section>-->

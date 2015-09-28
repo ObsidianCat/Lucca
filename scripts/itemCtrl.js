@@ -32,7 +32,7 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
 
         //$scope.jumpToLocation(targetName);
 
-    }//end of show hide toggler
+    };//end of show hide toggler
 
     //$scope.reviewModel = {
     //}
@@ -44,21 +44,24 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
             then(function(response) {
                 // this callback will be called asynchronously
                 // when the response is available
-                console.log(response.data);
-                $scope.reviewSuccess();
+
+                $scope.reviewSubmitSuccess();
+                //show to user message about form submission
                 $('.review-submit-message').text(response.data);
             }, function(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
                 $('.review-submit-message').text(response.data);
             });
-    }
-    $scope.reviewSuccess = function(){
+    };
+
+    //bring form to initial state after submit
+    //set form to submitted
+    $scope.reviewSubmitSuccess = function(){
         $scope.reviewModel={};
         $scope.reviewForm.$setPristine();
         $scope.reviewForm.$setUntouched();
         $scope.reviewForm.$setSubmitted();
-
-    }
+    };
 
 });
