@@ -17,10 +17,10 @@
 
     <section class="map">
         <md-card>
-        <h3 class="md-title item-titles"  ng-click="showHideToggler('map')" scroll-on-click>See on the map</h3>
+        <h3 class="md-title item-titles"  ng-click="showHideToggler('map')" scroll-on-click>On the map</h3>
             <md-card-content>
                  <div class="map-box" ng-show="showHideFlags.map">
-                     <div id="map"></div>
+                    <div id="map"></div>
                  </div>
             </md-card-content>
         </md-card>
@@ -28,7 +28,7 @@
 
     <section class="gallery">
         <md-card>
-            <h3 class="md-title item-titles"  ng-click="showHideToggler('gallery')" scroll-on-click>Gallery</h3>
+            <h3 class="md-title item-titles"  ng-click="showHideToggler('gallery')" ng-class="{{(showHideFlags.gallery==true) ? 'opened' : 'closed'}}" scroll-on-click>Gallery</h3>
             <md-card-content>
                 <div ng-show="showHideFlags.gallery">
                     <gallery ></gallery>

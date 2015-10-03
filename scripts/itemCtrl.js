@@ -2,27 +2,62 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
     $scope.item;
     $scope.param = 'item';
     $scope.activeImg = 0;
-    $scope.item = GetData.returnedData.getObject({res:$scope.param, id:1}).$promise.then(function(data){
-        $scope.item = data;
-    });
+    $scope.gallery = ['cathedralExterior-detail-full.jpg','cathedralExterior-full.jpg','cathedralExterior-interior-full.jpg'];
     $scope.showHideFlags = {
-        map:false,
+        map:true,
         reviews:false,
         addReviewForm:false,
         gallery:false
     };
 
-    $scope.gallery = ['cathedralExterior-detail-full.jpg','cathedralExterior-full.jpg','cathedralExterior-interior-full.jpg'];
-
-    $scope.createMap = function(){
-        var map;
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -34.397, lng: 150.644},
-                zoom: 8
-            });
+    //objects for the map
+    var map;
+    var geocoder = new google.maps.Geocoder();
+    //function for the map
+    function initializeMap(latCor, lngCor) {
+        var zoomAmount = 18;
+        console.log(latCor +"   "+ lngCor);
+        if(!latCor||!lngCor){
+            //default value
+            //center map on old lucca cathedral
+            latCor: 43.842900;
+            lngCor: 10.503135;
+            zoomAmount = 12
         }
-    };
+
+        var myOptions = {
+            zoom: zoomAmount,
+            center: {lat: latCor, lng: lngCor},
+        };
+        var map = new google.maps.Map(document.getElementById("map"),myOptions);
+
+        var marker = new google.maps.Marker({
+            position: {lat: latCor, lng: lngCor},
+            map: map,
+            title:"$scope.item.response[0].mainTitle"
+        });
+
+    }
+    function showAddressOnMap() {
+        geocoder.geocode({'address': $scope.item.response[0].mainTitle + " Lucca LU, Italy"}, function (results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat();
+                var longitude = results[0].geometry.location.lng();
+
+
+                initializeMap(latitude, longitude);
+
+            }
+
+        });
+    }
+
+
+    $scope.item = GetData.returnedData.getObject({res:$scope.param, id:1}).$promise.then(function(data){
+        $scope.item = data;
+        showAddressOnMap();
+    });
 
     $scope.setActiveImg = function($index){
         $scope.activeImg = $index;
@@ -32,18 +67,12 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
         console.log($scope.showHideFlags[targetName]);
         if($scope.showHideFlags[targetName]==false){
             $scope.showHideFlags[targetName]=true;
-            //$timeout(function() {
-            //    $scope.jumpToLocation(targetName);
-            //}, 3000);
-
         }
         else{
             $scope.showHideFlags[targetName]=false;
         }
     };//end of show hide toggler
 
-    //$scope.reviewModel = {
-    //}
 
     //submit review for current item
     $scope.submitReview = function(currentReview){
@@ -72,4 +101,4 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
         $scope.reviewForm.$setSubmitted();
     };
 
-});
+});//end of item controller

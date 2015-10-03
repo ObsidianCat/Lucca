@@ -10,6 +10,10 @@
     <link rel="stylesheet" type="text/css" href="media/Sass/main.css">
 
     <script src="scripts/vendor/jquery-2.1.4.min.js"></script>
+
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBFb0wP1dXPhAPTiQiD2GldpUuUozG-qEg"></script>
+
+
     <script src="scripts/vendor/angular.min.js"></script>
     <script src="scripts/vendor/angular-resource.min.js"></script>
     <script src="scripts/vendor/angular-route.min.js"></script>
@@ -32,13 +36,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
 
     <!--google maps-->
-    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFb0wP1dXPhAPTiQiD2GldpUuUozG-qEg&callback=initMap"></script>-->
-    
+
 </head>
+
 <body>
     <header><a href="#/"><h1>The Wanderer`s Guide to Lucca</h1></a></header>
     <div layout="column" class="main-wrapper">
         <div ng-view ></div>
     </div>
+
 </body>
 </html>
