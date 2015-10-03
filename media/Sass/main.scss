@@ -4,17 +4,29 @@ $-brick-red-light:#993300;
 $c-base-grey: #F7F7F7;
 $btn-sm-screen-width: 100%;
 
-@mixin no-padding-margin() {
+@mixin no-padding-margin {
   padding: 0rem;
   margin: 0rem;
 }
 
-.triangle-arrow-left {
+@mixin triangle-arrow-left{
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right:10px solid $-brick-red-medium;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right:15px solid $-brick-red-medium;
+  position: absolute;
+  right: 0px;
+}
+
+a.arrow-back{
+  position: absolute;
+  left: 2%;
+  top: 30%;
+
+  div {
+    @include triangle-arrow-left;
+  }
 }
 
 body {
@@ -22,22 +34,17 @@ body {
   background-color: $c-base-grey;
   font-size: 100%;
 }
-  .main-title-wrap{
-    position: relative;
-    .main-title{
-      font-size: 1.5rem;
-      color:$-brick-red-medium;
-    }
-    .main-sub-title{
-      color:$-brick-red-medium;
-    }
-    .triangle-arrow-left{
-      position: absolute;
-      left: 0px;
-      top: 40%;
-      margin-left: 2%;
-    }
+
+.main-title-wrap {
+  position: relative;
+  .main-title {
+    font-size: 1.5rem;
+    color: $-brick-red-medium;
   }
+  .main-sub-title {
+    color: $-brick-red-medium;
+  }
+}
 
 
 #sub-category-page{

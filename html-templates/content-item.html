@@ -2,7 +2,7 @@
     <md-content class="md-padding">
 
         <md-whiteframe class="main-title-wrap md-whiteframe-z2" layout layout-align="center center">
-            <a href back-button> <div class="triangle-arrow-left"></div></a>
+            <a href back-button class="arrow-back"> <div></div></a>
             <h1 class="main-title">{{item.response[0].mainTitle}}</h1>
         </md-whiteframe>
 
@@ -18,7 +18,10 @@
 
     <section class="map">
         <md-card>
-        <h3 class="md-title item-titles {{(showHideFlags.map==true) ? 'opened' : 'closed'}}"  ng-click="showHideToggler('map')" scroll-on-click>On the map</h3>
+        <h3 class="md-title item-titles {{(showHideFlags.map==true) ? 'opened' : 'closed'}}"  ng-click="showHideToggler('map')" scroll-on-click>
+            On the map
+            <div class="arrow-toogler"></div>
+        </h3>
             <md-card-content>
                  <div class="map-box" ng-show="showHideFlags.map">
                     <div id="map"></div>

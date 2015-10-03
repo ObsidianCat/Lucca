@@ -1,9 +1,15 @@
-.triangle-arrow-left {
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid #770f01; }
+a.arrow-back {
+  position: absolute;
+  left: 2%;
+  top: 30%; }
+  a.arrow-back div {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #770f01;
+    position: absolute;
+    right: 0px; }
 
 body {
   padding: 0rem;
@@ -18,11 +24,6 @@ body {
     color: #770f01; }
   .main-title-wrap .main-sub-title {
     color: #770f01; }
-  .main-title-wrap .triangle-arrow-left {
-    position: absolute;
-    left: 0px;
-    top: 40%;
-    margin-left: 2%; }
 
 #sub-category-page .main-title {
   font-size: 1rem;
