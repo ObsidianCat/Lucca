@@ -11,7 +11,6 @@ angular.module('luccaApp')
             controller:'subCategoryController',
             controllerAs:'subCategoryCtrl'
         })
-
         .when('/item/:param', {
             templateUrl:'html-templates/content-item.html',
             controller:'itemController',

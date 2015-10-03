@@ -1,7 +1,8 @@
 <div layout="column" id="content-item" >
     <md-content class="md-padding">
 
-        <md-whiteframe class="md-whiteframe-z2" layout layout-align="center center">
+        <md-whiteframe class="main-title-wrap md-whiteframe-z2" layout layout-align="center center">
+            <a href back-button> <div class="triangle-arrow-left"></div></a>
             <h1 class="main-title">{{item.response[0].mainTitle}}</h1>
         </md-whiteframe>
 
@@ -17,7 +18,7 @@
 
     <section class="map">
         <md-card>
-        <h3 class="md-title item-titles"  ng-click="showHideToggler('map')" scroll-on-click>On the map</h3>
+        <h3 class="md-title item-titles {{(showHideFlags.map==true) ? 'opened' : 'closed'}}"  ng-click="showHideToggler('map')" scroll-on-click>On the map</h3>
             <md-card-content>
                  <div class="map-box" ng-show="showHideFlags.map">
                     <div id="map"></div>
@@ -28,7 +29,7 @@
 
     <section class="gallery">
         <md-card>
-            <h3 class="md-title item-titles"  ng-click="showHideToggler('gallery')" ng-class="{{(showHideFlags.gallery==true) ? 'opened' : 'closed'}}" scroll-on-click>Gallery</h3>
+            <h3 class="md-title item-titles {{(showHideFlags.gallery==true) ? 'opened' : 'closed'}}"  ng-click="showHideToggler('gallery')"  scroll-on-click>Gallery</h3>
             <md-card-content>
                 <div ng-show="showHideFlags.gallery">
                     <gallery ></gallery>
@@ -40,7 +41,7 @@
 
     <section class="reviews">
         <md-card>
-            <h3 class="md-title item-titles"  ng-click="showHideToggler('addReviewForm')" scroll-on-click>Write your review</h3>
+            <h3 class="md-title item-titles {{(showHideFlags.addReviewForm==true) ? 'opened' : 'closed'}}"  ng-click="showHideToggler('addReviewForm')" scroll-on-click>Write your review</h3>
             <md-card-content>
                 <div class="add-new-review" ng-show="showHideFlags.addReviewForm">
                 <form ng-hide="reviewForm.$submitted" name="reviewForm" ng-submit="submitReview(reviewModel)">
@@ -70,7 +71,7 @@
         </md-card>
 
         <md-card>
-            <h3 class="md-title item-titles"  ng-click="showHideToggler('reviews');" scroll-on-click>
+            <h3 class="md-title item-titles {{(showHideFlags.reviews==true) ? 'opened' : 'closed'}}"  ng-click="showHideToggler('reviews');" scroll-on-click>
                 Read visitors reviews
             </h3>
             <md-card-content>

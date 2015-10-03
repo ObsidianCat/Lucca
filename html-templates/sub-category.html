@@ -1,8 +1,18 @@
-<!--<h2>Sub Category</h2>-->
-<ul id="sub-category-items">
-    <li ng-repeat="item in subCategoryItems" id="item-{{$index+1}}">
-        <a href="#item/{{$index+1}}">
-            <md-button class="md-raised md-cornered">{{item.itemName}}</md-button>
-        </a>
-    </li>
-</ul>
+<div layout="column" id="sub-category-page" >
+    <md-content class="md-padding">
+        <md-whiteframe class="main-title-wrap md-whiteframe-z2" layout layout-align="center center">
+            <a href back-button> <div class="triangle-arrow-left"></div></a>
+            <h3 class="main-title">Sub Cathegory</h3>
+        </md-whiteframe>
+
+        <ul id="sub-category-items">
+            <li ng-repeat="item in subCategoryItems" id="item-{{$index+1}}">
+                <a href="#item/{{$index+1}}">
+                    <md-button class="md-raised md-cornered">{{item.itemName}}</md-button>
+                </a>
+            </li>
+        </ul>
+
+        </md-content>
+</div>
+
