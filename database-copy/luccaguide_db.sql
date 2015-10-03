@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2015 at 03:33 PM
+-- Generation Time: Oct 03, 2015 at 03:38 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   `rating` int(2) NOT NULL,
   `message` text NOT NULL,
   `item_id` int(6) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reviews`
@@ -128,7 +128,7 @@ ALTER TABLE `item_images`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `review_id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
