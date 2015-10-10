@@ -12,6 +12,12 @@
                 <h3 class="main-sub-title">{{item.response[0].subTitle}}</h3>
                 <p class="address">{{item.response[0].address}}</p>
                 <p>{{item.response[0].description}}</p>
+                <p class="wiki-license">
+                    This article uses material from the Wikipedia article
+                    <a href="{{item.response[0].wiki_link}}">"{{item.response[0].wiki_title}}"</a>,<br>
+                    which is released under the <a href="./data/Creative _Commons_License.pdf" target="_blank">
+                    Creative Commons Attribution-Share-Alike License 3.0</a>.
+                </p>
             </md-card-content>
         </md-card>
     </section>
@@ -20,7 +26,6 @@
         <md-card>
         <h3 class="md-title item-titles {{(showHideFlags.map==true) ? 'opened' : 'closed'}}"  ng-click="showHideToggler('map')" scroll-on-click>
             On the map
-            <div class="arrow-toogler"></div>
         </h3>
             <md-card-content>
                  <div class="map-box" ng-show="showHideFlags.map">

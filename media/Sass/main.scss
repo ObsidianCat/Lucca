@@ -100,13 +100,6 @@ header {
     color:$-brick-red-medium;
     position: relative;
   }
-  //.item-titles:after{
-  //     content: ">";
-  //     position: absolute;
-  //     right: 2%;
-  //     transform: rotate(90deg);
-  //   }
-
   .closed:after{
     content: ">";
     position: absolute;
@@ -121,6 +114,11 @@ header {
     transform: rotate(270deg);
   }
 
+}
+
+.wiki-license{
+  font-style: italic;
+  font-size: 0.8em;
 }
 
 p.address{

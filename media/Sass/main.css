@@ -75,6 +75,10 @@ header {
   right: 2%;
   transform: rotate(270deg); }
 
+.wiki-license {
+  font-style: italic;
+  font-size: 0.8em; }
+
 p.address {
   padding: 0rem;
   margin: 0rem;
