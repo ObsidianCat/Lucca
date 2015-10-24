@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lucca`s guide: manage content</title>
+
+
+    <link rel="stylesheet" type="text/css" href="media/Sass/admin_area.css">
+
+    <script src="scripts/vendor/jquery-2.1.4.min.js"></script>
+    <script src="scripts/vendor/angular.min.js"></script>
+    <script src="scripts/vendor/angular-resource.min.js"></script>
+    <script src="scripts/vendor/angular-route.min.js"></script>
+    <script src="scripts/vendor/moment.min.js"></script>
+
+    <!--<script src="scripts/luccaApplication.js"></script>-->
+    <script src="scripts/mainCategoryCtrl.js"></script>
+    <script src="scripts/getDataService.js"></script>
+    <script src="scripts/routes.js"></script>
+    <script src="scripts/subCategoryCtrl.js"></script>
+    <script src="scripts/itemCtrl.js" ></script>
+    <script src="scripts/reviewDirective.js" ></script>
+    <script src="scripts/backButtonDirective.js" ></script>
+
+    <script src="scripts/reviewItemCtrl.js" ></script>
+    <script src="scripts/galleryDirective.js" ></script>
+    <script src="scripts/scrollOnClickDirective.js" ></script>
+
+    <!--angular material and it`s dependencies-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+
+
+
+</head>
+<body>
+    <header>
+        <a href="#/"><h1>The Wanderer`s Guide to Lucca</h1></a>
+    </header>
+    <div layout="column" class="main-wrapper">
+        <div ng-view ></div>
+    </div>
+</body>
+</html>
