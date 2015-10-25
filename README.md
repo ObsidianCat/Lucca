@@ -1,3 +1,3 @@
-# Lucca
-Live demo of the applciation
+# Lucca Guide
+Live demo of the application
 http://lucca-lulaleus.rhcloud.com/
