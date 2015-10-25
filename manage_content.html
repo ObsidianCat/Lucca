@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="luccaAdminApp">
 <head>
     <meta charset="UTF-8">
     <title>Lucca`s guide: manage content</title>
@@ -13,18 +13,20 @@
     <script src="scripts/vendor/angular-route.min.js"></script>
     <script src="scripts/vendor/moment.min.js"></script>
 
-    <!--<script src="scripts/luccaApplication.js"></script>-->
-    <script src="scripts/mainCategoryCtrl.js"></script>
+    <script src="scripts/sharedFunctionalityModule.js"></script>
+    <script src="scripts/luccaAdminApplication.js"></script>
+    <script src="scripts/dashboardCtrl.js"></script>
+    <!--<script src="scripts/mainCategoryCtrl.js"></script>-->
     <script src="scripts/getDataService.js"></script>
-    <script src="scripts/routes.js"></script>
-    <script src="scripts/subCategoryCtrl.js"></script>
-    <script src="scripts/itemCtrl.js" ></script>
-    <script src="scripts/reviewDirective.js" ></script>
-    <script src="scripts/backButtonDirective.js" ></script>
+    <!--<script src="scripts/routes.js"></script>-->
+    <!--<script src="scripts/subCategoryCtrl.js"></script>-->
+    <!--<script src="scripts/itemCtrl.js" ></script>-->
+    <!--<script src="scripts/reviewDirective.js" ></script>-->
+    <!--<script src="scripts/backButtonDirective.js" ></script>-->
 
-    <script src="scripts/reviewItemCtrl.js" ></script>
-    <script src="scripts/galleryDirective.js" ></script>
-    <script src="scripts/scrollOnClickDirective.js" ></script>
+    <!--<script src="scripts/reviewItemCtrl.js" ></script>-->
+    <!--<script src="scripts/galleryDirective.js" ></script>-->
+    <!--<script src="scripts/scrollOnClickDirective.js" ></script>-->
 
     <!--angular material and it`s dependencies-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
@@ -36,12 +38,24 @@
 
 
 </head>
-<body>
+<body >
     <header>
         <a href="#/"><h1>The Wanderer`s Guide to Lucca</h1></a>
     </header>
-    <div layout="column" class="main-wrapper">
-        <div ng-view ></div>
+    <div layout="column" class="main-wrapper" ng-controller="dashboardController as dashboardCtrl">
+        <!--<div ng-view ></div>-->
+        <nav>
+            <ul layout="column" id="main-categories" >
+                <li flex ng-repeat="category in categories" id="{{category.categoryName.toLowerCase()}}">
+
+                    <a flex href="#subcategory/{{category.categoryName.toLowerCase()}}">
+                        <md-button flex class="md-raised md-cornered">
+                            {{category.categoryName}}
+                        </md-button>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </body>
 </html>

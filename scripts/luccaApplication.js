@@ -1,8 +1,7 @@
 /**
  * Created by Aleosha on 06.06.2015.
  */
-angular.module('luccaApp', ['ngResource', 'ngRoute', 'ngMaterial'])
-
+angular.module('luccaApp', ['sharedModule','ngResource', 'ngRoute', 'ngMaterial'])
     .constant(
     //for the weather widget on home page
     'WEATHER_URL', {

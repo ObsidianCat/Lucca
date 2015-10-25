@@ -1,7 +1,7 @@
 /**
  * Created by Aleosha on 06.06.2015.
  */
-angular.module('luccaApp').factory('GetData', ['$resource',
+angular.module('sharedModule').factory('GetData', ['$resource',
     function($resource){
         return {
             returnedData: $resource('data/:res.php', {res: '@res'}, {
