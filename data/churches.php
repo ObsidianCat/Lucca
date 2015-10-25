@@ -1,8 +1,23 @@
-[
-  {"itemName":"Lucca Cathedral"},
-  {"itemName":"Basilica of San Frediano (Coming soon)"},
-  {"itemName":"San Michele in Foro (Coming soon)"},
-  {"itemName":"San Giusto (Coming soon)"},
-  {"itemName":"Santa Giulia (Coming soon)"}
-]
+<?php
+//open database connection
+require('../server/database_connect.php');
 
+$queryItem = "SELECT mainTitle, item_id ";
+$queryItem .= "FROM items ";
+$queryItem .="WHERE item_type='churches'";
+$resultItem = mysqli_query($connection, $queryItem);
+
+//handle data from database
+$churchesData = [];
+while($item = mysqli_fetch_assoc($resultItem)){
+  array_push($churchesData, $item );
+}
+//organize returned data
+print "{\"response\":".json_encode($churchesData)."}";
+
+?>
+
+<?php
+// Close database connection
+mysqli_close($connection);
+?>

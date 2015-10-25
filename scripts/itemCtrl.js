@@ -1,4 +1,6 @@
 angular.module('luccaApp').controller('itemController', function($scope, $http, $resource, $routeParams,  GetData){
+    console.log('$routeParams');
+    itemId = $routeParams.param;
     $scope.item;
     $scope.param = 'item';
     $scope.activeImg = 0;
@@ -54,7 +56,7 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
     }
 
     //fetch data for the item with this specific id from the server
-    $scope.item = GetData.returnedData.getObject({res:$scope.param, id:1}).$promise.then(function(data){
+    $scope.item = GetData.returnedData.getObject({res:$scope.param, id:itemId}).$promise.then(function(data){
         $scope.item = data;
         showAddressOnMap();
         console.log($scope.item);

@@ -4,15 +4,13 @@
             <a href back-button class="arrow-back"> <div></div></a>
             <h3 class="main-title">{{pageTitle}}</h3>
         </md-whiteframe>
-
         <ul id="sub-category-items">
-            <li ng-repeat="item in subCategoryItems" id="item-{{$index+1}}">
-                <a href="#item/{{$index+1}}">
-                    <md-button class="md-raised md-cornered">{{item.itemName}}</md-button>
+            <li ng-repeat="item in subCategoryItems" id="item-{{item.item_id}}">
+                <a href="#item/{{item.item_id}}">
+                    <md-button class="md-raised md-cornered">{{item.mainTitle}}</md-button>
                 </a>
             </li>
         </ul>
-
         </md-content>
 </div>
 
