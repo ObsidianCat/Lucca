@@ -1,6 +1,6 @@
 <?php
 //open database connection
-require('../server/database_connect.php');
+require('../php_includes/database_connect.php');
 $id = $_GET['id'];
 
 $queryItem = "SELECT * ";
