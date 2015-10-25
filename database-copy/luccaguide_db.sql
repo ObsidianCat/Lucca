@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2015 at 12:14 PM
+-- Generation Time: Oct 25, 2015 at 01:48 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -34,15 +34,17 @@ CREATE TABLE IF NOT EXISTS `items` (
   `description` text NOT NULL,
   `wiki_link` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `wiki_name` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
-  `wiki_title` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `wiki_title` varchar(200) DEFAULT NULL,
+  `item_type` varchar(30) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `items`
 --
 
-INSERT INTO `items` (`item_id`, `mainTitle`, `subTitle`, `address`, `description`, `wiki_link`, `wiki_name`, `wiki_title`) VALUES
-(1, 'Lucca Cathedral', 'Roman Catholic cathedral dedicated to Saint Martin (Italian: Duomo di Lucca, Cattedrale di San Martino)', 'Piazza Antelminelli, 55100 Lucca LU, Italy', 'Of the original structure, the great apse with its tall columnar arcades and the fine campanile remain. The nave and transepts of the cathedral were rebuilt in the Gothic style in the 14th century, while the west front was begun in 1204 by Guido Bigarelli of Como, and consists of a vast portico of three magnificent arches, and above them three ranges of open galleries adorned with sculptures. In the nave a small octagonal temple or chapel shrine contains the most precious relic in Lucca, the Holy Face of Lucca (Italian: Volto Santo di Lucca) or Sacred Countenance. This cedar-wood crucifix and image of Christ, according to the legend, was carved by his contemporary Nicodemus, and miraculously conveyed to Lucca in 782. Christ is clothed in the colobium, a long sleeveless garment. The chapel was built in 1484 by Matteo Civitali, the most famous Luccan sculptor of the early Renaissance. The tomb of Ilaria del Carretto by Jacopo della Quercia of Siena, the earliest of his extant works was commissioned by her husband, the lord of Lucca, Paolo Guinigi, in 1406. Additionally the cathedral contains Domenico Ghirlandaio''s Madonna and Child with Saints Peter, Clement, Paul and Sebastian; Federico Zuccari''s Adoration of the Magi, Jacopo Tintoretto''s Last Supper, and finally Fra Bartolomeo''s Madonna and Child (1509). There is a legend to explain why all the columns of the fa?ade are different. According to the tale, when they were going to decorate it, the inhabitants of Lucca announced a contest for the best column. Every artist made a column, but then the inhabitants of Lucca decided to take them all, without paying the artists and used all the columns.', 'https://en.wikipedia.org/wiki/Lucca_Cathedral', 'Lucca Cathedral', 'Lucca Cathedral');
+INSERT INTO `items` (`item_id`, `mainTitle`, `subTitle`, `address`, `description`, `wiki_link`, `wiki_name`, `wiki_title`, `item_type`) VALUES
+(1, 'Lucca Cathedral', 'Roman Catholic cathedral dedicated to Saint Martin (Italian: Duomo di Lucca, Cattedrale di San Martino)', 'Piazza Antelminelli, 55100 Lucca LU, Italy', 'Of the original structure, the great apse with its tall columnar arcades and the fine campanile remain. The nave and transepts of the cathedral were rebuilt in the Gothic style in the 14th century, while the west front was begun in 1204 by Guido Bigarelli of Como, and consists of a vast portico of three magnificent arches, and above them three ranges of open galleries adorned with sculptures. In the nave a small octagonal temple or chapel shrine contains the most precious relic in Lucca, the Holy Face of Lucca (Italian: Volto Santo di Lucca) or Sacred Countenance. This cedar-wood crucifix and image of Christ, according to the legend, was carved by his contemporary Nicodemus, and miraculously conveyed to Lucca in 782. Christ is clothed in the colobium, a long sleeveless garment. The chapel was built in 1484 by Matteo Civitali, the most famous Luccan sculptor of the early Renaissance. The tomb of Ilaria del Carretto by Jacopo della Quercia of Siena, the earliest of his extant works was commissioned by her husband, the lord of Lucca, Paolo Guinigi, in 1406. Additionally the cathedral contains Domenico Ghirlandaio''s Madonna and Child with Saints Peter, Clement, Paul and Sebastian; Federico Zuccari''s Adoration of the Magi, Jacopo Tintoretto''s Last Supper, and finally Fra Bartolomeo''s Madonna and Child (1509). There is a legend to explain why all the columns of the fa?ade are different. According to the tale, when they were going to decorate it, the inhabitants of Lucca announced a contest for the best column. Every artist made a column, but then the inhabitants of Lucca decided to take them all, without paying the artists and used all the columns.', 'https://en.wikipedia.org/wiki/Lucca_Cathedral', 'Lucca Cathedral', 'Lucca Cathedral', 'churches'),
+(2, 'Basilica of San Frediano', 'The Basilica of San Frediano is a Romanesque church situated on the Piazza San Frediano.', 'Piazza S. Frediano, 55100 Lucca LU, Italy', 'Fridianus (Frediano) was an Irish bishop of Lucca in the first half of the 6th century. He had a church built on this spot, dedicated to St. Vincent, a martyr from Zaragoza, Spain. When Fridianus was buried in this church, the church was renamed Ss. Frediano and Vincenzo. Soon afterwards, a community of Augustinian canons was growing around this church. In the Longobard era, the church and the canon house were enlarged. In 1104, this order was recognized by Pope Paschal II. The prior of St. Frediano was later accorded a rank equal in dignity to that of a bishop.', 'https://en.wikipedia.org/wiki/Basilica_of_San_Frediano', 'Basilica of San Frediano', 'Basilica of San Frediano', 'churches');
 
 -- --------------------------------------------------------
 
@@ -121,7 +123,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `item_id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `item_id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `item_images`
 --
