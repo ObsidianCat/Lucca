@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Lucca`s guide: manage content</title>
 
-
     <link rel="stylesheet" type="text/css" href="media/Sass/admin_area.css">
 
     <script src="scripts/vendor/jquery-2.1.4.min.js"></script>
@@ -48,11 +47,18 @@
             <ul layout="column" id="main-categories" >
                 <li flex ng-repeat="category in categories" id="{{category.categoryName.toLowerCase()}}">
 
-                    <a flex href="#subcategory/{{category.categoryName.toLowerCase()}}">
+                    <a flex href="#subcategory/{{category.idName}}" ng-click="getSubCategory(category.idName)">
                         <md-button flex class="md-raised md-cornered">
                             {{category.categoryName}}
                         </md-button>
                     </a>
+                    <ul id="sub-category-items">
+                        <li ng-repeat="item in category.items" id="item-{{item.item_id}}">
+                            <a href="#item/{{item.item_id}}">
+                                <md-button class="md-raised md-cornered">{{item.mainTitle}}</md-button>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>

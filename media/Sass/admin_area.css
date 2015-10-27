@@ -1,3 +1,31 @@
+a.arrow-back {
+  position: absolute;
+  left: 2%;
+  top: 30%; }
+  a.arrow-back div {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #770f01;
+    position: absolute;
+    right: 0px; }
 
+body {
+  padding: 0rem;
+  margin: 0rem;
+  background-color: #F7F7F7;
+  font-size: 100%; }
+
+header {
+  background-color: #aa1501;
+  color: white;
+  cursor: pointer; }
+  header a {
+    color: white;
+    text-decoration: none; }
+  header h1 {
+    margin: 0em;
+    padding: 0.2em; }
 
 /*# sourceMappingURL=admin_area.css.map */

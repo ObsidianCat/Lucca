@@ -17,6 +17,17 @@ body {
   background-color: #F7F7F7;
   font-size: 100%; }
 
+header {
+  background-color: #aa1501;
+  color: white;
+  cursor: pointer; }
+  header a {
+    color: white;
+    text-decoration: none; }
+  header h1 {
+    margin: 0em;
+    padding: 0.2em; }
+
 .main-title-wrap {
   position: relative; }
   .main-title-wrap .main-title {
@@ -28,17 +39,6 @@ body {
 #sub-category-page .main-title {
   font-size: 1rem;
   color: #770f01; }
-
-header {
-  background-color: #aa1501;
-  color: white;
-  cursor: pointer; }
-  header a {
-    color: white;
-    text-decoration: none; }
-  header h1 {
-    margin: 0em;
-    padding: 0.2em; }
 
 .main-wrapper {
   margin: 1rem; }
@@ -117,4 +117,4 @@ section#weather_widget img {
 
 /*END Weather*/
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=guide_area.css.map */
