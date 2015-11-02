@@ -1,10 +1,14 @@
-angular.module('luccaApp').controller('itemController', function($scope, $http, $resource, $routeParams,  GetData){
-    console.log('$routeParams');
-    itemId = $routeParams.param;
+angular.module('luccaApp').controller('itemController', function($scope, $http, $resource,
+                                                                 $routeParams, GetData, CENTRE_OF_LUCCA_ON_MAP){
+    //console.log('$routeParams');
+    var itemId = $routeParams.param;
     $scope.item;
     $scope.param = 'item';
     $scope.activeImg = 0;
+
+    //need implementation.
     $scope.gallery = ['cathedralExterior-detail-full.jpg','cathedralExterior-full.jpg','cathedralExterior-interior-full.jpg'];
+    //flags for show and hide of different page sections
     $scope.showHideFlags = {
         map:true,
         reviews:false,
@@ -18,12 +22,11 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
     //function for the map
     function initializeMap(latCor, lngCor) {
         var zoomAmount = 18;
-        console.log(latCor +"   "+ lngCor);
         if(!latCor||!lngCor){
             //default value
             //center map on old lucca cathedral
-            latCor: 43.842900;
-            lngCor: 10.503135;
+            latCor: CENTRE_OF_LUCCA_ON_MAP.lat;
+            lngCor: CENTRE_OF_LUCCA_ON_MAP.lng;
             zoomAmount = 12
         }
 
@@ -46,10 +49,7 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
             if (status == google.maps.GeocoderStatus.OK) {
                 var latitude = results[0].geometry.location.lat();
                 var longitude = results[0].geometry.location.lng();
-
-
                 initializeMap(latitude, longitude);
-
             }
 
         });

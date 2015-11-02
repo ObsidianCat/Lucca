@@ -24,20 +24,6 @@
   margin: 1rem;
 }
 
-#main-categories,
-#sub-category-items {
-  list-style: none;
-  padding-left: 0px;
-  font-size: 1.5rem;
-  a{
-    text-decoration: none;
-    color: $-brick-red-light;
-
-    button{
-      width: $btn-sm-screen-width;
-    }
-  }
-}
 
 #content-item{
   md-card-content{

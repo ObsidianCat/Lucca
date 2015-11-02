@@ -3,11 +3,18 @@
  */
 angular.module('luccaApp', ['sharedModule','ngResource', 'ngRoute', 'ngMaterial'])
     .constant(
-    //for the weather widget on home page
-    'WEATHER_URL', {
-        F:'http://api.openweathermap.org/data/2.5/forecast/daily?q=lucca,italy&mode=json&units=imperial&cnt=5&APPID=f11b6479b3f18b18b3fbc16a916960db',
-        C:'http://api.openweathermap.org/data/2.5/forecast/daily?q=lucca,italy&mode=json&units=metric&cnt=5&APPID=f11b6479b3f18b18b3fbc16a916960db',
-        cText:'C',
-        fText:'F'
+        //for the weather widget on home page
+        'WEATHER_URL', {
+            F:'http://api.openweathermap.org/data/2.5/forecast/daily?q=lucca,italy&mode=json&units=imperial&cnt=5&APPID=f11b6479b3f18b18b3fbc16a916960db',
+            C:'http://api.openweathermap.org/data/2.5/forecast/daily?q=lucca,italy&mode=json&units=metric&cnt=5&APPID=f11b6479b3f18b18b3fbc16a916960db',
+            cText:'C',
+            fText:'F'
+        }
+    )
+    .constant(
+    //For default position on google map
+    'CENTRE_OF_LUCCA_ON_MAP', {
+        lat: 43.842900,
+        lng: 10.503135
     }
-    );
+);

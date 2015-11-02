@@ -6,15 +6,15 @@
 
     <link rel="stylesheet" type="text/css" href="media/Sass/admin_area.css">
 
-    <script src="scripts/vendor/jquery-2.1.4.min.js"></script>
-    <script src="scripts/vendor/angular.min.js"></script>
-    <script src="scripts/vendor/angular-resource.min.js"></script>
-    <script src="scripts/vendor/angular-route.min.js"></script>
-    <script src="scripts/vendor/moment.min.js"></script>
+    <script src="scripts/vendors/jquery-2.1.4.min.js"></script>
+    <script src="scripts/vendors/angular.min.js"></script>
+    <script src="scripts/vendors/angular-resource.min.js"></script>
+    <script src="scripts/vendors/angular-route.min.js"></script>
+    <script src="scripts/vendors/moment.min.js"></script>
 
     <script src="scripts/sharedFunctionalityModule.js"></script>
     <script src="scripts/luccaAdminApplication.js"></script>
-    <script src="scripts/dashboardCtrl.js"></script>
+    <script src="scripts/controllers/dashboardCtrl.js"></script>
     <!--<script src="scripts/mainCategoryCtrl.js"></script>-->
     <script src="scripts/getDataService.js"></script>
     <!--<script src="scripts/routes.js"></script>-->
@@ -41,10 +41,17 @@
     <header>
         <a href="#/"><h1>The Wanderer`s Guide to Lucca</h1></a>
     </header>
-    <div layout="column" class="main-wrapper" ng-controller="dashboardController as dashboardCtrl">
+    <div layout="row" class="main-wrapper" ng-controller="dashboardController as dashboardCtrl">
         <!--<div ng-view ></div>-->
         <nav>
             <ul layout="column" id="main-categories" >
+                <li flex class="add-new-item">
+                    <a flex href="#add-new-item">
+                        <md-button flex class="md-raised md-cornered">
+                            Add New Item
+                        </md-button>
+                    </a>
+                </li>
                 <li flex ng-repeat="category in categories" id="{{category.categoryName.toLowerCase()}}">
 
                     <a flex href="#subcategory/{{category.idName}}" ng-click="getSubCategory(category.idName)">
@@ -52,7 +59,7 @@
                             {{category.categoryName}}
                         </md-button>
                     </a>
-                    <ul id="sub-category-items">
+                    <ul class="sub-category-items">
                         <li ng-repeat="item in category.items" id="item-{{item.item_id}}">
                             <a href="#item/{{item.item_id}}">
                                 <md-button class="md-raised md-cornered">{{item.mainTitle}}</md-button>
@@ -62,6 +69,8 @@
                 </li>
             </ul>
         </nav>
+        <div ng-view ></div>
+
     </div>
 </body>
 </html>

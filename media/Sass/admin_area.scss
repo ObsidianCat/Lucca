@@ -1,1 +1,11 @@
 @import 'basic';
+nav{
+  ul.sub-category-items{
+    margin-left: 1rem;
+    font-size: 1rem;
+
+    button{
+      font-size: 0.8em;
+    }
+  }
+}

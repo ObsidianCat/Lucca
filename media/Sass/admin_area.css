@@ -28,4 +28,23 @@ header {
     margin: 0em;
     padding: 0.2em; }
 
+#main-categories,
+.sub-category-items {
+  list-style: none;
+  padding-left: 0px;
+  font-size: 1.5rem; }
+  #main-categories a,
+  .sub-category-items a {
+    text-decoration: none;
+    color: #993300; }
+    #main-categories a button,
+    .sub-category-items a button {
+      width: 100%; }
+
+nav ul.sub-category-items {
+  margin-left: 1rem;
+  font-size: 1rem; }
+  nav ul.sub-category-items button {
+    font-size: 0.8em; }
+
 /*# sourceMappingURL=admin_area.css.map */
