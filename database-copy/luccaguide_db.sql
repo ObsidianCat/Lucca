@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2015 at 01:48 PM
+-- Generation Time: Nov 03, 2015 at 01:09 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -69,6 +69,29 @@ INSERT INTO `item_images` (`image_id`, `item_id`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `main_categories`
+--
+
+CREATE TABLE IF NOT EXISTS `main_categories` (
+  `cat_id` int(11) NOT NULL,
+  `categoryName` varchar(65) NOT NULL,
+  `idName` varchar(65) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `main_categories`
+--
+
+INSERT INTO `main_categories` (`cat_id`, `categoryName`, `idName`) VALUES
+(1, 'History', 'history'),
+(2, 'Churches', 'churches'),
+(3, 'Palazzi (Coming soon)', 'palazzi'),
+(4, 'Streets (Coming soon)', 'streets'),
+(5, 'Walls (Coming soon)', 'walls');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reviews`
 --
 
@@ -110,6 +133,12 @@ ALTER TABLE `item_images`
   ADD PRIMARY KEY (`image_id`), ADD KEY `item_id` (`item_id`);
 
 --
+-- Indexes for table `main_categories`
+--
+ALTER TABLE `main_categories`
+  ADD PRIMARY KEY (`cat_id`);
+
+--
 -- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
@@ -129,6 +158,11 @@ ALTER TABLE `items`
 --
 ALTER TABLE `item_images`
   MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `main_categories`
+--
+ALTER TABLE `main_categories`
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `reviews`
 --
