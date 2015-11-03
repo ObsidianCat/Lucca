@@ -1,28 +1,23 @@
-{
-    "history":{
-        "categoryName":"History",
-        "id":1,
-        "idName":"history"
-    },
-    "churches":{
-        "categoryName":"Churches",
-        "id":2,
-        "idName":"churches"
-    },
-    "palazzi":{
-        "categoryName":"Palazzi (Coming soon)",
-        "id":3,
-        "idName":"palazzi"
-    },
-    "streets":{
-        "categoryName":"Streets (Coming soon)",
-        "id":4,
-        "idName":"streets"
-    },
-    "walls":{
-        "categoryName":"Walls (Coming soon)",
-        "id":5,
-        "idName":"walls"
-    }
-}
+<?php
 
+//open database connection
+require('../php_includes/database_connect.php');
+
+$queryItem = "SELECT categoryName, idName ";
+$queryItem .= "FROM main_categories";
+$resultItem = mysqli_query($connection, $queryItem);
+
+//handle data from database
+$categoriesData = [];
+while($item = mysqli_fetch_assoc($resultItem)){
+array_push($categoriesData, $item );
+}
+//organize returned data
+print "{\"response\":".json_encode($categoriesData)."}";
+
+?>
+
+<?php
+// Close database connection
+mysqli_close($connection);
+?>

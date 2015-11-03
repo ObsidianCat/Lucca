@@ -2,7 +2,7 @@ angular.module('luccaApp').controller('mainCategoryController', function($scope,
     $scope.categories = "";
 
     $scope.categories = GetData.returnedData.getObject({res:'mainCategories'}).$promise.then(function(data) {
-        $scope.categories = data;
+        $scope.categories = data.response;
     });
 
     //create array of days for weather widget

@@ -8,7 +8,7 @@ angular.module('luccaAdminApp').controller('dashboardController', function($scop
 
     //get categories for main menu
     $scope.categories = GetData.returnedData.getObject({res:'mainCategories'}).$promise.then(function(data) {
-        $scope.categories = data;
+        $scope.categories = data.response;
         //console.log($scope.categories);
         populateMenuToggler($scope.categories);
     });
@@ -23,9 +23,16 @@ angular.module('luccaAdminApp').controller('dashboardController', function($scop
     }
 
     $scope.getSubCategory = function (subcategoryName){
+        //var currentCategory = null;
+        for(var i=0; i<$scope.categories.length; i++){
+            var currentCategory = $scope.categories[i];
+            if(currentCategory.idName == subcategoryName){
+                break;
+            };
+        }
         //get titles from database
-        $scope.categories[subcategoryName].items  = GetData.returnedData.getObject({res:subcategoryName}).$promise.then(function(data) {
-            $scope.categories[subcategoryName].items = data.response;
+        GetData.returnedData.getObject({res:subcategoryName}).$promise.then(function(data) {
+            currentCategory.items = data.response;
         });
 
         if($scope.menuToggleFlags[subcategoryName] === false){
@@ -40,10 +47,9 @@ angular.module('luccaAdminApp').controller('dashboardController', function($scop
 
     //watch for changes in toogle for submenu
     $scope.$watchCollection('menuToggleFlags', function(newNames, oldNames) {
-        console.log('object updated');
-        console.log(newNames);
-        console.log(oldNames);
-
+        //console.log('object updated');
+        //console.log(newNames);
+        //console.log(oldNames);
     });
 
 
