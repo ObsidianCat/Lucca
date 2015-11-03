@@ -1,16 +1,15 @@
 /**
  * Created by Lula on 10/25/2015.
  */
-angular.module('luccaAdminApp').controller('dashboardController', function($scope, $http, $resource, GetData){
-    $scope.categories = "";
+angular.module('luccaAdminApp').controller('dashboardController', function($rootScope, $scope, $http, $resource, GetData){
     $scope.menuToggleFlags = {
     };
 
     //get categories for main menu
-    $scope.categories = GetData.returnedData.getObject({res:'mainCategories'}).$promise.then(function(data) {
-        $scope.categories = data.response;
+    $rootScope.categories = $rootScope.categories|| GetData.returnedData.getObject({res:'mainCategories'}).$promise.then(function(data) {
+        $rootScope.categories = data.response;
         //console.log($scope.categories);
-        populateMenuToggler($scope.categories);
+        populateMenuToggler($rootScope.categories);
     });
 
     //create toogle property for given category
@@ -24,8 +23,8 @@ angular.module('luccaAdminApp').controller('dashboardController', function($scop
 
     $scope.getSubCategory = function (subcategoryName){
         //var currentCategory = null;
-        for(var i=0; i<$scope.categories.length; i++){
-            var currentCategory = $scope.categories[i];
+        for(var i=0; i<$rootScope.categories.length; i++){
+            var currentCategory =$rootScope.categories[i];
             if(currentCategory.idName == subcategoryName){
                 break;
             };

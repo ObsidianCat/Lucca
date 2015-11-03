@@ -15,8 +15,10 @@
     <script src="scripts/sharedFunctionalityModule.js"></script>
     <script src="scripts/luccaAdminApplication.js"></script>
     <script src="scripts/controllers/dashboardCtrl.js"></script>
+    <script src="scripts/controllers/createItemCtrl.js"></script>
+
     <!--<script src="scripts/mainCategoryCtrl.js"></script>-->
-    <script src="scripts/getDataService.js"></script>
+    <script src="scripts/services/getDataFromResourceService.js"></script>
     <script src="scripts/routesAdmin.js"></script>
     <!--<script src="scripts/subCategoryCtrl.js"></script>-->
     <!--<script src="scripts/itemCtrl.js" ></script>-->
@@ -42,7 +44,6 @@
         <a href="#/"><h1>The Wanderer`s Guide to Lucca</h1></a>
     </header>
     <div layout="row" class="main-wrapper" ng-controller="dashboardController as dashboardCtrl">
-        <!--<div ng-view ></div>-->
         <nav>
             <ul layout="column" id="main-categories" >
                 <li flex class="add-new-item">

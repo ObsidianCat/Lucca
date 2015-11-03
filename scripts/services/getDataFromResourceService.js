@@ -4,7 +4,7 @@
 angular.module('sharedModule').factory('GetData', ['$resource',
     function($resource){
         return {
-            returnedData: $resource('data/:res.php', {res: '@res'}, {
+            returnedData: $resource('resources/:res.php', {res: '@res'}, {
                 'get':    {method:'GET', isArray: true},
                 'getObject':    {method:'GET'},
                 'query': { method: 'GET', params: {}, isArray: true }
