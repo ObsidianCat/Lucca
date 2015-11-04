@@ -1,33 +1,33 @@
-<section id="create-item-wrapper">
-    <form>
+<section id="create-item-wrapper" >
+    <form name="itemForm" ng-submit="submitItem(newItemModel)">
         <fieldset>
             <label for="category">Category:</label>
-            <select name="category" id="category" >
+            <select name="category" id="category"  ng-model="newItemModel.category">
                 <option value="default" selected>Choose category fot the item</option>
                 <option ng-repeat="category in categories" value="{{category.idName}}">{{category.categoryName}}</option>
             </select>
         </fieldset>
         <fieldset>
             <label for="title">Title:</label>
-            <input id="title" type="text" name="title">
+            <input id="title" type="text" name="title" ng-model="newItemModel.title">
 
-            <label for="sub-title">Sub-title:</label>
-            <input id="sub-title" type="text" name="sub-title">
+            <label for="sub_title">Sub-title:</label>
+            <input id="sub_title" type="text" name="sub_title" ng-model="newItemModel.sub_title">
 
             <label for="address">Address:</label>
-            <input id="address" type="text" name="address">
+            <input id="address" type="text" name="address" ng-model="newItemModel.address">
         </fieldset>
 
         <fieldset>
             <label for="content">Content:</label>
-            <textarea id="content" name="content" rows="10" cols="50" placeholder="Write something here"></textarea>
+            <textarea id="content" ng-model="newItemModel.content" name="content" rows="10" cols="50" placeholder="Write something here"></textarea>
         </fieldset>
 
         <fieldset>
-            <label for="wiki-related">Wiki article was used for creating this item</label>
-            <input id="wiki-related" type="checkbox" name="wiki-related">
+            <label for="wiki_related">Wiki article was used for creating this item</label>
+            <input id="wiki_related" type="checkbox" name="wiki_related" ng-model="newItemModel.wiki_related">
             <label for="content">Wiki article link:</label>
-            <input id="wiki-url" type="url" name="address">
+            <input id="wiki_url" type="url" name="wiki_url" ng-model="newItemModel.wiki_url">
         </fieldset>
         <fieldset>
             <input id="clear" type="reset" name="clear">

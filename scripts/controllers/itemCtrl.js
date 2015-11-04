@@ -79,8 +79,10 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
 
     //submit review for current item
     $scope.submitReview = function(currentReview){
+        /*TODO implement dynamics issigmnet of item id*/
         currentReview.itemId =1;
-        $http.post('php/review_form_proceeding.php', currentReview).
+
+        $http.post('server/review_form_proceeding.php', currentReview).
             then(function(response) {
                 // this callback will be called asynchronously
                 // when the response is available
