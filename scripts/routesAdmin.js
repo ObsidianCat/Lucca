@@ -5,7 +5,7 @@ angular.module('luccaAdminApp')
     .config(function($routeProvider){
         $routeProvider
             .when('/add-new-item', {
-                templateUrl:'html-templates/create-new-item.html',
+                templateUrl:'partials/create-new-item.html',
                 controller:'createItemController',
                 controllerAs:'createItemCtrl'
             })

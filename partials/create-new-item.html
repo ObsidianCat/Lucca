@@ -2,8 +2,9 @@
     <form>
         <fieldset>
             <label for="category">Category:</label>
-            <select name="category" id="category">
+            <select name="category" id="category" >
                 <option value="default" selected>Choose category fot the item</option>
+                <option ng-repeat="category in categories" value="{{category.idName}}">{{category.categoryName}}</option>
             </select>
         </fieldset>
         <fieldset>

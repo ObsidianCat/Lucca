@@ -15,9 +15,6 @@ array_push($categoriesData, $item );
 //organize returned data
 print "{\"response\":".json_encode($categoriesData)."}";
 
-?>
-
-<?php
 // Close database connection
 mysqli_close($connection);
 ?>

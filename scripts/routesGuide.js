@@ -5,20 +5,20 @@ angular.module('luccaApp')
 .config(function($routeProvider){
         $routeProvider
         .when('/subcategory/history', {
-            templateUrl:'html-templates/short-history.html'
+            templateUrl:'partials/short-history.html'
         })
         .when('/subcategory/:param', {
-            templateUrl:'html-templates/sub-category.html',
+            templateUrl:'partials/sub-category.html',
             controller:'subCategoryController',
             controllerAs:'subCategoryCtrl'
         })
         .when('/item/:param', {
-            templateUrl:'html-templates/content-item.html',
+            templateUrl:'partials/content-item.html',
             controller:'itemController',
             controllerAs:'itemCtrl'
         })
         .when('/',{
-                templateUrl:'html-templates/main-categories.html',
+                templateUrl:'partials/main-categories.html',
                 controller: 'mainCategoryController',
                 controllerAs:'mainCategoryCtrl'
          })

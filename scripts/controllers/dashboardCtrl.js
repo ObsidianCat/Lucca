@@ -8,7 +8,7 @@ angular.module('luccaAdminApp').controller('dashboardController', function($root
     //get categories for main menu
     $rootScope.categories = $rootScope.categories|| GetData.returnedData.getObject({res:'mainCategories'}).$promise.then(function(data) {
         $rootScope.categories = data.response;
-        //console.log($scope.categories);
+        //console.log($rootScope.categories);
         populateMenuToggler($rootScope.categories);
     });
 
