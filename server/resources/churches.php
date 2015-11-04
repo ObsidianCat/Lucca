@@ -1,6 +1,6 @@
 <?php
 //open database connection
-require('../php_includes/database_connect.php');
+require('../includes/database_connect.php');
 
 $queryItem = "SELECT mainTitle, item_id ";
 $queryItem .= "FROM items ";

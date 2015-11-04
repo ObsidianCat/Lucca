@@ -1,7 +1,7 @@
 <?php
 
 //open database connection
-require('../php_includes/database_connect.php');
+require('../includes/database_connect.php');
 
 $queryItem = "SELECT categoryName, idName ";
 $queryItem .= "FROM main_categories";

@@ -1,6 +1,6 @@
 <?php
-require_once('functions.php');
-require_once('database_connect.php');
+require_once('includes/functions.php');
+require_once('includes/database_connect.php');
 
 $message;
 
