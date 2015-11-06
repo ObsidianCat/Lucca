@@ -54,8 +54,10 @@
                             {{category.categoryName}}
                         </md-button>
                     </a>
-                    <ul class="sub-category-items">
-                        <li ng-repeat="item in category.items" id="item-{{item.item_id}}">
+                    <ul class="sub-category-items"
+                            ng-show="menuToggleFlags[category.idName]">
+                        <li ng-repeat="item in category.items"
+                            id="item-{{item.item_id}}">
                             <a href="#item/{{item.item_id}}">
                                 <md-button class="md-raised md-cornered">{{item.mainTitle}}</md-button>
                             </a>

@@ -5,8 +5,16 @@ require_once('includes/database_connect.php');
 $message;
 
 //if form sent as JSON, convert it to POST Array
-if(isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "application/json") !== false) {
+if(isset($_SERVER["HTTP_CONTENT_TYPE"]) && strpos($_SERVER["HTTP_CONTENT_TYPE"], "application/json") !== false) {
+    //case build-in web server
     $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
+}
+else if(isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "application/json") !== false) {
+    //default case
+    $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
+}
+else {
+ //  print_r($_SERVER);
 }
 
 if($_POST['itemId']){
@@ -29,11 +37,9 @@ if($_POST['itemId']){
     $result = mysqli_query($connection, $query);
         $message = 'Your review is submitted. Thank you for sharing your opinion.';
 
- }
-
-
+}
 else{
-    $message = 'Sorry. Some error occurred. Please try to submitt you review later.';
+    $message = '<br> Sorry. Some error occurred. Please try to submit you review later.';
 }
 
 echo $message;

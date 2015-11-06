@@ -7,6 +7,6 @@
 angular.module('luccaApp').directive('gallery', function(){
     return {
         restrict:'E',
-        templateUrl:'html-templates/gallery.html'
+        templateUrl:'partials/gallery.html'
     }
 })

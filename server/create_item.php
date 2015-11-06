@@ -17,21 +17,21 @@ if(isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "applicat
 }
 
 if($_POST['submit']){
-    $item_type = mysql_prep($_POST['category']);
     $mainTitle = mysql_prep($_POST['title']);
     $subTitle = mysql_prep($_POST['sub_title']);
     $address = mysql_prep($_POST['address']);
     $description = mysql_prep($_POST['content']);
     //boolean value, is content of the item related to some specific article on wiki
-    $wiki_related = (int) ($_POST['wiki_related'])?1:0;
     $wiki_link = ($_POST['wiki_url'])?$_POST['wiki_link']:null;
+    $wiki_related = (int) ($_POST['wiki_related'])?1:0;
     $wiki_title = ($_POST['wiki_title'])?$_POST['wiki_title']:null;
+    $item_type = mysql_prep($_POST['category']);
 
     //perform database querry
     $query = "INSERT INTO items(";
     $query .= " mainTitle, subTitle, address, description, wiki_link, wiki_related, wiki_title, item_type";
     $query .= " ) VALUES (";
-    $query .= " '{$nickname}', '{$originCountry}', CURRENT_TIMESTAMP(), '{$dateOfVisit}', '{$email}', {$rating}, '{$message}', {$itemId}";
+    $query .= " '{$mainTitle}', '{$subTitle}', '{$address}', '{$description}', '{$wiki_link}', {$wiki_related}, '{$wiki_title}'";
     $query .= " )";
 
     //execute query
