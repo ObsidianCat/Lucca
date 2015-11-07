@@ -18,27 +18,26 @@
     <script src="scripts/luccaAdminApplication.js"></script>
     <script src="scripts/controllers/dashboardCtrl.js"></script>
     <script src="scripts/controllers/createItemCtrl.js"></script>
+    <script src="scripts/controllers/editItemCtrl.js"></script>
 
     <script src="scripts/services/getDataFromResourceSvc.js"></script>
     <script src="scripts/routesAdmin.js"></script>
 
 
     <!--angular material and it`s dependencies-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
 
 </head>
 <body >
     <header>
         <a href="#/"><h1>The Wanderer`s Guide to Lucca</h1></a>
     </header>
-    <div layout="row" class="main-wrapper" ng-controller="dashboardController as dashboardCtrl">
-        <nav>
+    <div layout="row" class="dashboard main-wrapper" ng-controller="dashboardController as dashboardCtrl">
+        <nav id="main-menu">
             <ul layout="column" id="main-categories" >
                 <li flex class="add-new-item">
                     <a flex href="#add-new-item">
@@ -59,15 +58,14 @@
                         <li ng-repeat="item in category.items"
                             id="item-{{item.item_id}}">
                             <a href="#item/{{item.item_id}}">
-                                <md-button class="md-raised md-cornered">{{item.mainTitle}}</md-button>
+                                <md-button class=" md-cornered">{{item.mainTitle}}</md-button>
                             </a>
                         </li>
                     </ul>
                 </li>
             </ul>
         </nav>
-        <div ng-view ></div>
-
+        <div ng-view id="edit"></div>
     </div>
 </body>
 </html>

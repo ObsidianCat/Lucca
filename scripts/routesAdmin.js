@@ -9,6 +9,11 @@ angular.module('luccaAdminApp')
                 controller:'createItemController',
                 controllerAs:'createItemCtrl'
             })
+            .when('/item/:param', {
+                templateUrl:'partials/edit-item.html',
+                controller:'editItemController',
+                controllerAs:'editItemCtrl'
+            })
             .otherwise({redirectTo:'/'
             });
     });

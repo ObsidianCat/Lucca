@@ -1,5 +1,5 @@
 @import 'basic';
-nav{
+nav#main-menu{
   ul.sub-category-items{
     margin-left: 1rem;
     font-size: 1rem;
@@ -7,5 +7,19 @@ nav{
     button{
       font-size: 0.8em;
     }
+  }
+}
+
+#edit{
+  width: 80%;
+}
+section#edit-item-wrapper{
+  padding: 0% 2% 0% 2%;
+}
+
+form{
+  border: 1px solid grey;
+  fieldset{
+    border: none;
   }
 }

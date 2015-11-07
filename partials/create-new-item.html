@@ -1,5 +1,6 @@
-<section id="create-item-wrapper" >
-    <form name="itemForm" ng-submit="submitItem(newItemModel)">
+<section id="edit-item-wrapper" layout="row">
+    <md-content flex layout-padding>
+        <form name="itemForm" ng-submit="submitItem(newItemModel)">
         <fieldset>
             <label for="category">Category:</label>
             <select name="category" id="category"  ng-model="newItemModel.category">
@@ -8,28 +9,38 @@
             </select>
         </fieldset>
         <fieldset>
+            <md-input-container>
             <label for="title">Title:</label>
             <input id="title" type="text" name="title" ng-model="newItemModel.title">
-
+            </md-input-container>
+            <md-input-container>
             <label for="sub_title">Sub-title:</label>
             <input id="sub_title" type="text" name="sub_title" ng-model="newItemModel.sub_title">
-
+            </md-input-container>
+            <md-input-container>
             <label for="address">Address:</label>
             <input id="address" type="text" name="address" ng-model="newItemModel.address">
+            </md-input-container>
         </fieldset>
 
         <fieldset>
+            <md-input-container>
             <label for="content">Content:</label>
             <textarea id="content" ng-model="newItemModel.content" name="content" rows="10" cols="50" placeholder="Write something here"></textarea>
+            </md-input-container>
         </fieldset>
 
         <fieldset>
             <label for="wiki_related">Wiki article was used for creating this item</label>
             <input id="wiki_related" type="checkbox" name="wiki_related" ng-model="newItemModel.wiki_related">
+            <md-input-container>
             <label for="wiki_link">Wiki article link:</label>
             <input id="wiki_link" type="url" name="wiki_link" ng-model="newItemModel.wiki_link">
+            </md-input-container>
+            <md-input-container>
             <label for="wiki_title">Wiki article title:</label>
             <input id="wiki_title" type="text" name="wiki_title" ng-model="newItemModel.wiki_title">
+            </md-input-container>
         </fieldset>
         <fieldset>
             <input id="clear" type="reset" name="clear">
@@ -39,4 +50,12 @@
 
 
     </form>
+    </md-content>
+    <aside id="item-actions">
+        <nav>
+            <a flex href="#">
+                <md-button flex class="md-raised md-cornered">Create item</md-button>
+            </a>
+        </nav>
+    </aside>
 </section>

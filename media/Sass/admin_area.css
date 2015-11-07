@@ -1,3 +1,7 @@
+ul {
+  padding: 0rem;
+  margin: 0rem; }
+
 a.arrow-back {
   position: absolute;
   left: 2%;
@@ -41,10 +45,21 @@ header {
     .sub-category-items a button {
       width: 100%; }
 
-nav ul.sub-category-items {
+nav#main-menu ul.sub-category-items {
   margin-left: 1rem;
   font-size: 1rem; }
-  nav ul.sub-category-items button {
+  nav#main-menu ul.sub-category-items button {
     font-size: 0.8em; }
+
+#edit {
+  width: 80%; }
+
+section#edit-item-wrapper {
+  padding: 0% 2% 0% 2%; }
+
+form {
+  border: 1px solid grey; }
+  form fieldset {
+    border: none; }
 
 /*# sourceMappingURL=admin_area.css.map */

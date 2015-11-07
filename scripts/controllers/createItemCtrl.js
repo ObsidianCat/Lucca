@@ -2,9 +2,8 @@
  * Created by Lula on 11/3/2015.
  */
 angular.module('luccaAdminApp').controller('createItemController', function($http,$rootScope, $scope, GetData){
-    //console.log($rootScope.categories);
 
-    //submit review for current item
+    //submit new item
     $scope.submitItem = function(itemData){
         console.log(itemData);
         $http.post('server/create_item.php', itemData).
@@ -25,7 +24,7 @@ angular.module('luccaAdminApp').controller('createItemController', function($htt
     //bring form to initial state after submit
     //set form to submitted
     $scope.submitItemSuccess = function(){
-        $scope.reviewModel={};
+        $scope.newItemModel={};
         $scope.itemForm.$setPristine();
         $scope.itemForm.$setUntouched();
         $scope.itemForm.$setSubmitted();

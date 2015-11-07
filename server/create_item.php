@@ -12,17 +12,25 @@ require_once('includes/database_connect.php');
 $message;
 
 //if form sent as JSON, convert it to POST Array
-if(isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "application/json") !== false) {
+if(isset($_SERVER["HTTP_CONTENT_TYPE"]) && strpos($_SERVER["HTTP_CONTENT_TYPE"], "application/json") !== false) {
+    //case build-in web server
     $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
 }
+else if(isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "application/json") !== false) {
+    //default case
+    $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
+}
+else {
+    //  print_r($_SERVER);
+}
 
-if($_POST['submit']){
+if($_POST['title']){
     $mainTitle = mysql_prep($_POST['title']);
     $subTitle = mysql_prep($_POST['sub_title']);
     $address = mysql_prep($_POST['address']);
     $description = mysql_prep($_POST['content']);
     //boolean value, is content of the item related to some specific article on wiki
-    $wiki_link = ($_POST['wiki_url'])?$_POST['wiki_link']:null;
+    $wiki_link = ($_POST['wiki_link'])?$_POST['wiki_link']:null;
     $wiki_related = (int) ($_POST['wiki_related'])?1:0;
     $wiki_title = ($_POST['wiki_title'])?$_POST['wiki_title']:null;
     $item_type = mysql_prep($_POST['category']);
