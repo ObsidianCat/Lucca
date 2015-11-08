@@ -45,6 +45,9 @@ header {
     .sub-category-items a button {
       width: 100%; }
 
+input[type=checkbox] {
+  transform: scale(1.5); }
+
 nav#main-menu ul.sub-category-items {
   margin-left: 1rem;
   font-size: 1rem; }
@@ -58,7 +61,7 @@ section#edit-item-wrapper {
   padding: 0% 2% 0% 2%; }
 
 form {
-  border: 1px solid grey; }
+  border: 1px solid #A0A0A0; }
   form fieldset {
     border: none; }
 

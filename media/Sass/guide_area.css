@@ -45,6 +45,9 @@ header {
     .sub-category-items a button {
       width: 100%; }
 
+input[type=checkbox] {
+  transform: scale(1.5); }
+
 .main-title-wrap {
   position: relative; }
   .main-title-wrap .main-title {
