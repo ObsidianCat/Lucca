@@ -15,18 +15,20 @@ $message;
 if(isset($_SERVER["HTTP_CONTENT_TYPE"]) && strpos($_SERVER["HTTP_CONTENT_TYPE"], "application/json") !== false) {
     //case build-in web server
     $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
+    print_r($_POST);
 }
 else if(isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "application/json") !== false) {
     //default case
     $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
+    print_r($_POST);
 }
 else {
-    //  print_r($_SERVER);
+    echo 'error';
 }
 
-if($_POST['title']){
-    $mainTitle = mysql_prep($_POST['title']);
-    $subTitle = mysql_prep($_POST['sub_title']);
+if($_POST['mainTitle']){
+    $mainTitle = mysql_prep($_POST['mainTitle']);
+    $subTitle = mysql_prep($_POST['subTitle']);
     $address = mysql_prep($_POST['address']);
     $description = mysql_prep($_POST['content']);
     //boolean value, is content of the item related to some specific article on wiki

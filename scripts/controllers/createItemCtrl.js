@@ -3,6 +3,7 @@
  */
 angular.module('luccaAdminApp').controller('createItemController', function($http,$rootScope, $scope, GetData){
 
+    $scope.test = "Hello";
     //submit new item
     $scope.submitItem = function(itemData){
         console.log(itemData);
@@ -17,7 +18,7 @@ angular.module('luccaAdminApp').controller('createItemController', function($htt
             }, function(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
-                $('#create-item-wrapper').text(response.data);
+                $('#edit-item-wrapper').text(response.data);
             });
     };
 
