@@ -2,7 +2,7 @@
     <li flex ng-repeat="category in categories" id="{{category.categoryName.toLowerCase()}}">
 
             <a flex href="#subcategory/{{category.categoryName.toLowerCase()}}">
-                <md-button flex class="md-raised md-cornered">
+                <md-button ng-disabled="category.idName !='churches' && category.idName !='history'"flex class="md-raised md-cornered">
                 {{category.categoryName}}
                 </md-button>
             </a>
@@ -12,8 +12,6 @@
     <md-content class="md-padding">
     <p ng-click="changeWeatherUnits()">
         Lucca Forecast
-        <!--<span ng-click="changeWeatherUnits('C')">C</span>-->
-        <!--<span ng-click="changeWeatherUnits('F')">F</span>-->
     </p>
     <md-tabs md-dynamic-height md-border-bottom>
             <md-tab ng-repeat="weatherDay in weather.list">
