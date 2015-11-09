@@ -1,15 +1,8 @@
-<form name="itemForm" ng-submit="submitItem(itemDataModel)">
+<form novalidate  name="itemForm" ng-submit="submitItem(itemDataModel)">
     <fieldset>
         <md-input-container>
             <label>Category:</label>
-            <!--<select name="category" id="category"  ng-model="itemDataModel.category">-->
-                <!--<option value="default" selected>Choose category fot the item</option>-->
-                <!--<option ng-repeat="category in categories" value="{{category.idName}}">{{category.categoryName}}</option>-->
-            <!--</select>-->
-            <md-select ng-model="itemDataModel.category">
-                <!--<md-option selected ng-repeat="category in categories" value="default">-->
-                    <!--Choose category fot the item-->
-                <!--</md-option>-->
+            <md-select ng-model="itemDataModel.category" required>
                 <md-option ng-selected="(category.idName == itemDataModel.item_type)" ng-repeat="category in categories" value="{{category.idName}}">
                     {{category.categoryName}}
                 </md-option>
@@ -19,24 +12,26 @@
     </fieldset>
     <fieldset>
         <md-input-container>
-
             <label for="title">Title:</label>
-            <input id="title" type="text" name="mainTitle" ng-model="itemDataModel.mainTitle">
+            <input required  id="title" type="text" name="mainTitle" ng-model="itemDataModel.mainTitle">
+            <div ng-messages="itemDataModel.mainTitle.$error">
+                <div ng-message="required">This is required.</div>
+            </div>
         </md-input-container>
         <md-input-container>
             <label for="sub_title">Sub-title:</label>
-            <input id="sub_title" type="text" name="subTitle" ng-model="itemDataModel.subTitle">
+            <input required  id="sub_title" type="text" name="subTitle" ng-model="itemDataModel.subTitle">
         </md-input-container>
         <md-input-container>
             <label for="address">Address:</label>
-            <input id="address" type="text" name="address" ng-model="itemDataModel.address">
+            <input required  id="address" type="text" name="address" ng-model="itemDataModel.address">
         </md-input-container>
     </fieldset>
 
     <fieldset>
         <md-input-container>
-            <label for="content">Content:</label>
-            <textarea id="content" ng-model="itemDataModel.description" name="content" rows="10" cols="50" placeholder="Write something here"></textarea>
+            <label for="description">description:</label>
+            <textarea required id="description" ng-model="itemDataModel.description" name="description" rows="10" cols="50" placeholder="Write something here"></textarea>
         </md-input-container>
     </fieldset>
 
@@ -49,11 +44,11 @@
 
          <md-input-container>
                 <label for="wiki_link">Wiki article link:</label>
-                <input ng-disabled="!itemDataModel.wiki_related" id="wiki_link" type="url" name="wiki_link" ng-model="itemDataModel.wiki_link">
+                <input required  ng-disabled="!itemDataModel.wiki_related" id="wiki_link" type="url" name="wiki_link" ng-model="itemDataModel.wiki_link">
          </md-input-container>
         <md-input-container>
                 <label for="wiki_title">Wiki article title:</label>
-                <input ng-disabled="!itemDataModel.wiki_related"  id="wiki_title" type="text" name="wiki_title" ng-model="itemDataModel.wiki_title">
+                <input required  ng-disabled="!itemDataModel.wiki_related"  id="wiki_title" type="text" name="wiki_title" ng-model="itemDataModel.wiki_title">
         </md-input-container>
     </fieldset>
     <fieldset>

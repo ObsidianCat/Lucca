@@ -15,12 +15,10 @@ $message;
 if(isset($_SERVER["HTTP_CONTENT_TYPE"]) && strpos($_SERVER["HTTP_CONTENT_TYPE"], "application/json") !== false) {
     //case build-in web server
     $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
-    print_r($_POST);
 }
 else if(isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "application/json") !== false) {
     //default case
     $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
-    print_r($_POST);
 }
 else {
     echo 'error';
@@ -30,7 +28,7 @@ if($_POST['mainTitle']){
     $mainTitle = mysql_prep($_POST['mainTitle']);
     $subTitle = mysql_prep($_POST['subTitle']);
     $address = mysql_prep($_POST['address']);
-    $description = mysql_prep($_POST['content']);
+    $description = mysql_prep($_POST['description']);
     //boolean value, is content of the item related to some specific article on wiki
     $wiki_link = ($_POST['wiki_link'])?$_POST['wiki_link']:null;
     $wiki_related = (int) ($_POST['wiki_related'])?1:0;
@@ -41,7 +39,7 @@ if($_POST['mainTitle']){
     $query = "INSERT INTO items(";
     $query .= " mainTitle, subTitle, address, description, wiki_link, wiki_related, wiki_title, item_type";
     $query .= " ) VALUES (";
-    $query .= " '{$mainTitle}', '{$subTitle}', '{$address}', '{$description}', '{$wiki_link}', {$wiki_related}, '{$wiki_title}'";
+    $query .= " '{$mainTitle}', '{$subTitle}', '{$address}', '{$description}', '{$wiki_link}', {$wiki_related}, '{$wiki_title}', '{$item_type}'";
     $query .= " )";
 
     //execute query
