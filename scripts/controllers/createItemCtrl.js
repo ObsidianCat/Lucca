@@ -5,7 +5,7 @@ angular.module('luccaAdminApp').controller('createItemController', function($htt
 
     $scope.test = "Hello";
     //submit new item
-    $scope.submitItem = function(itemData){
+    $scope.createItem = function(itemData){
         console.log(itemData);
         $http.post('server/create_item.php', itemData).
             then(function(response) {
@@ -31,6 +31,7 @@ angular.module('luccaAdminApp').controller('createItemController', function($htt
         $scope.itemForm.$setUntouched();
         $scope.itemForm.$setSubmitted();
     };
+
 
 
 });

@@ -6,3 +6,8 @@ function mysql_prep($string){
     return $escaped_string;
 
 }
+
+function redirect_to($new_location){
+    header("Location: ".$new_location);
+    exit;
+}

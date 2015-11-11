@@ -25,6 +25,7 @@ else {
 }
 
 if($_POST['mainTitle']){
+    print_r($_POST);
     $mainTitle = mysql_prep($_POST['mainTitle']);
     $subTitle = mysql_prep($_POST['subTitle']);
     $address = mysql_prep($_POST['address']);
