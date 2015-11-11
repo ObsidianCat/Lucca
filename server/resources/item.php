@@ -8,6 +8,23 @@ $message;
 //check what actions is needed
 
 //give data about item
+function convertJsonObjToPostArray()
+{
+//if form sent as JSON, convert it to POST Array
+
+    $statusFlag = false;
+    if (isset($_SERVER["HTTP_CONTENT_TYPE"]) && strpos($_SERVER["HTTP_CONTENT_TYPE"], "application/json") !== false) {
+        //case build-in web server
+        $_POST = array_merge($_POST, (array)json_decode(trim(file_get_contents('php://input')), true));
+        $statusFlag = true;
+    } else if (isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "application/json") !== false) {
+        //default case
+        $_POST = array_merge($_POST, (array)json_decode(trim(file_get_contents('php://input')), true));
+        $statusFlag = true;
+    }
+    return $statusFlag;
+}
+
 if($_SERVER['REQUEST_METHOD'] == "GET"){
     $id = $_GET['id'];
 
@@ -43,20 +60,10 @@ elseif($_SERVER['REQUEST_METHOD'] == "DELETE"){
 
 }
 elseif($_SERVER['REQUEST_METHOD'] == "PUT") {
-    //if form sent as JSON, convert it to POST Array
-    if(isset($_SERVER["HTTP_CONTENT_TYPE"]) && strpos($_SERVER["HTTP_CONTENT_TYPE"], "application/json") !== false) {
-        //case build-in web server
-        $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
-    }
-    else if(isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "application/json") !== false) {
-        //default case
-        $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
-    }
-    else {
-        echo 'error';
-    }
+    $isConverted = convertJsonObjToPostArray();
 
-    if($_POST['id']){
+
+    if($isConverted&&$_POST['id']){
 //        print_r($_POST);
         $mainTitle = mysql_prep($_POST['mainTitle']);
         $subTitle = mysql_prep($_POST['subTitle']);
@@ -96,20 +103,8 @@ elseif($_SERVER['REQUEST_METHOD'] == "PUT") {
     echo $message;
 }
 elseif($_SERVER['REQUEST_METHOD'] == "POST") {
-    //if form sent as JSON, convert it to POST Array
-    if(isset($_SERVER["HTTP_CONTENT_TYPE"]) && strpos($_SERVER["HTTP_CONTENT_TYPE"], "application/json") !== false) {
-        //case build-in web server
-        $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
-    }
-    else if(isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "application/json") !== false) {
-        //default case
-        $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
-    }
-    else {
-        echo 'error';
-    }
-
-    if($_POST['mainTitle']){
+    $isConverted = convertJsonObjToPostArray();
+    if($isConverted){
         print_r($_POST);
         $mainTitle = mysql_prep($_POST['mainTitle']);
         $subTitle = mysql_prep($_POST['subTitle']);

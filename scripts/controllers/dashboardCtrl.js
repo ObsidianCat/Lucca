@@ -3,7 +3,7 @@
  */
 angular.module('luccaAdminApp').controller('dashboardController', function($rootScope, $scope, $http, $resource, GetData){
     $scope.menuToggleFlags = [];
-
+    $scope.menuToggleFlags["categoriesMenu"] = false;
     //get categories for main menu
     $rootScope.categories = $rootScope.categories|| GetData.returnedData.getObject({res:'mainCategories'}).$promise.then(function(data) {
         $rootScope.categories = data.response;
@@ -14,11 +14,11 @@ angular.module('luccaAdminApp').controller('dashboardController', function($root
     //create toogle property for given category
     function populateMenuToggler(menuData){
         for(var prop in menuData) {
-            if(menuData[prop].hasOwnProperty('idName')){
-                var name = menuData[prop].idName;
+            if(menuData[prop].hasOwnProperty('cat_id')){
+                var name = "catId" + menuData[prop].cat_id;
                 $scope.menuToggleFlags[name] = false;
             }
-        }
+        }//end of for loop
     }
 
     $scope.getSubCategory = function (subcategoryName){

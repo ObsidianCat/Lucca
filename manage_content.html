@@ -48,6 +48,23 @@
                         </md-button>
                     </a>
                 </li>
+                <li flex>
+                        <md-button flex class="md-raised md-cornered" ng-click="menuToggleFlags['categoriesMenu'] = !menuToggleFlags['categoriesMenu']">
+                            Categories
+                        </md-button>
+                        <ul class="sub-menu sub-category-items" ng-show="menuToggleFlags['categoriesMenu']">
+                            <li>
+                                <a href="category/add-category-form">
+                                    <md-button class=" md-cornered">Add new category</md-button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="category/edit-categories-form">
+                                    <md-button class=" md-cornered">Edit categories</md-button>
+                                </a>
+                            </li>
+                        </ul>
+                </li>
                 <li flex ng-repeat="category in categories" id="{{category.categoryName.toLowerCase()}}">
 
                     <a flex href="#subcategory/{{category.idName}}" ng-click="getSubCategory(category.idName)">
@@ -55,7 +72,7 @@
                             {{category.categoryName}}
                         </md-button>
                     </a>
-                    <ul class="sub-category-items"
+                    <ul class="sub-menu sub-category-items"
                             ng-show="menuToggleFlags[category.idName]">
                         <li ng-repeat="item in category.items"
                             id="item-{{item.item_id}}">

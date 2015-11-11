@@ -8,12 +8,16 @@ nav#main-menu{
       font-size: 0.8em;
     }
   }
+  button.md-button{
+    width: 100%;
+  }
 }
 
 #edit{
   width: 80%;
 }
-section#edit-item-wrapper{
+section#edit-item-wrapper,
+section#edit-category-wrapper{
   padding: 0% 2% 0% 2%;
 }
 

@@ -3,7 +3,7 @@
 //open database connection
 require('../includes/database_connect.php');
 
-$queryItem = "SELECT categoryName, idName ";
+$queryItem = "SELECT * ";
 $queryItem .= "FROM main_categories";
 $resultItem = mysqli_query($connection, $queryItem);
 
