@@ -7,7 +7,7 @@ angular.module('luccaAdminApp').controller('createItemController', function($htt
     //submit new item
     $scope.createItem = function(itemData){
         console.log(itemData);
-        $http.post('server/create_item.php', itemData).
+        $http.post('server/resources/item.php', itemData).
             then(function(response) {
                 // this callback will be called asynchronously
                 // when the response is available
