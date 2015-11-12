@@ -31,7 +31,4 @@ angular.module('luccaAdminApp').controller('createItemController', function($htt
         $scope.itemForm.$setUntouched();
         $scope.itemForm.$setSubmitted();
     };
-
-
-
 });

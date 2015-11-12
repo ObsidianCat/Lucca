@@ -20,8 +20,12 @@
     <script src="scripts/controllers/dashboardCtrl.js"></script>
     <script src="scripts/controllers/createItemCtrl.js"></script>
     <script src="scripts/controllers/editItemCtrl.js"></script>
+    <script src="scripts/controllers/createCategoryCtrl.js"></script>
+    <script src="scripts/controllers/editCategoryCtrl.js"></script>
 
     <script src="scripts/directives/editItemFormDrct.js"></script>
+    <script src="scripts/directives/editCategoryFormDrct.js"></script>
+
     <script src="scripts/services/getDataFromResourceSvc.js"></script>
     <script src="scripts/routesAdmin.js"></script>
 
@@ -48,22 +52,26 @@
                         </md-button>
                     </a>
                 </li>
-                <li flex>
-                        <md-button flex class="md-raised md-cornered" ng-click="menuToggleFlags['categoriesMenu'] = !menuToggleFlags['categoriesMenu']">
-                            Categories
+                <li flex class="add-new-category">
+                    <a flex href="#add-new-category">
+                        <md-button flex class="md-raised md-cornered">
+                            Add New Category
                         </md-button>
-                        <ul class="sub-menu sub-category-items" ng-show="menuToggleFlags['categoriesMenu']">
-                            <li>
-                                <a href="category/add-category-form">
-                                    <md-button class=" md-cornered">Add new category</md-button>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="category/edit-categories-form">
-                                    <md-button class=" md-cornered">Edit categories</md-button>
-                                </a>
-                            </li>
-                        </ul>
+                    </a>
+                </li>
+                <li flex>
+                    <md-button flex class="md-raised md-cornered" ng-click="menuToggleFlags['categoriesMenu'] = !menuToggleFlags['categoriesMenu']">
+                        Categories
+                    </md-button>
+                    <ul class="sub-menu sub-category-items" ng-show="menuToggleFlags[category.idName]">
+                    <!--<li ng-repeat="item in category.items" id="item-{{item.item_id}}">-->
+                        <li>
+                        <a href="#item/{{item.item_id}}">
+                            <md-button class=" md-cornered">{{item.mainTitle}}</md-button>
+                        </a>
+                        </li>
+                    </ul>
+
                 </li>
                 <li flex ng-repeat="category in categories" id="{{category.categoryName.toLowerCase()}}">
 

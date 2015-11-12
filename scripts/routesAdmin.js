@@ -14,6 +14,11 @@ angular.module('luccaAdminApp')
                 controller:'editItemController',
                 controllerAs:'editItemCtrl'
             })
+            .when('/add-new-category', {
+                templateUrl:'partials/create-category.html',
+                controller:'createCategoryController',
+                controllerAs:'createCategoryCtrl'
+            })
             .otherwise({redirectTo:'/'
             });
     });

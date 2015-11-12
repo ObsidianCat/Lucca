@@ -13,9 +13,10 @@ angular.module('luccaAdminApp').controller('dashboardController', function($root
 
     //create toogle property for given category
     function populateMenuToggler(menuData){
+
         for(var prop in menuData) {
             if(menuData[prop].hasOwnProperty('cat_id')){
-                var name = "catId" + menuData[prop].cat_id;
+                var name = menuData[prop].idName;
                 $scope.menuToggleFlags[name] = false;
             }
         }//end of for loop
