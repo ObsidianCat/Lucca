@@ -6,23 +6,23 @@ angular.module('luccaAdminApp')
         $routeProvider
             .when('/add-new-item', {
                 templateUrl:'partials/create-new-item.html',
-                controller:'createItemController',
-                controllerAs:'createItemCtrl'
+                controller:'manageItemController',
+                controllerAs:'manageItemCtrl'
             })
             .when('/item/:param', {
                 templateUrl:'partials/edit-item.html',
-                controller:'editItemController',
-                controllerAs:'editItemCtrl'
+                controller:'manageItemController',
+                controllerAs:'manageItemCtrl'
             })
             .when('/category/:param', {
                 templateUrl:'partials/edit-category.html',
-                controller:'editCategoryController',
-                controllerAs:'editCategoryCtrl'
+                controller:'manageCategoryController',
+                controllerAs:'manageCategoryCtrl'
             })
             .when('/add-new-category', {
                 templateUrl:'partials/create-category.html',
-                controller:'createCategoryController',
-                controllerAs:'createCategoryCtrl'
+                controller:'manageCategoryController',
+                controllerAs:'manageCategoryCtrl'
             })
             .otherwise({redirectTo:'/'
             });
