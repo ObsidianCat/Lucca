@@ -1,7 +1,7 @@
 angular.module('luccaApp').controller('mainCategoryController', function($scope, $http, $resource, GetData, WEATHER_URL){
     $scope.categories = "";
 
-    $scope.categories = GetData.returnedData.getObject({res:'mainCategories'}).$promise.then(function(data) {
+    $scope.categories = GetData.returnedData.getObject({res:'categories'}).$promise.then(function(data) {
         $scope.categories = data.response;
     });
 

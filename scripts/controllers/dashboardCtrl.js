@@ -5,8 +5,9 @@ angular.module('luccaAdminApp').controller('dashboardController', function($root
     $scope.menuToggleFlags = [];
     $scope.menuToggleFlags["categoriesMenu"] = false;
     //get categories for main menu
-    $rootScope.categories = $rootScope.categories|| GetData.returnedData.getObject({res:'mainCategories'}).$promise.then(function(data) {
+    $rootScope.categories = $rootScope.categories|| GetData.returnedData.getObject({res:'categories'}).$promise.then(function(data) {
         $rootScope.categories = data.response;
+            console.log($rootScope.categories);
         //console.log($rootScope.categories);
         populateMenuToggler($rootScope.categories);
     });

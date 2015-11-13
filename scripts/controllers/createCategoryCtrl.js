@@ -5,7 +5,7 @@ angular.module('luccaAdminApp').controller('createCategoryController', function(
     //submit new item
     $scope.createCategory = function(categoryData){
         console.log(itemData);
-        $http.post('server/resources/mainCategories.php', categoryData).
+        $http.post('server/resources/categories.php', categoryData).
             then(function(response) {
                 // this callback will be called asynchronously
                 // when the response is available
