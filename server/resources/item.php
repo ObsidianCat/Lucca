@@ -89,7 +89,7 @@ elseif($_SERVER['REQUEST_METHOD'] == "PUT") {
 elseif($_SERVER['REQUEST_METHOD'] == "POST") {
     $isConverted = convertJsonObjToPostArray();
     if($isConverted){
-        print_r($_POST);
+//        print_r($_POST);
         $mainTitle = mysql_prep($_POST['mainTitle']);
         $subTitle = mysql_prep($_POST['subTitle']);
         $address = mysql_prep($_POST['address']);
