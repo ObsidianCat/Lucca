@@ -51,10 +51,37 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
         $query .= " '{$categoryName}', '{$idName}'";
         $query .= " )";
 
-        echo $query;
         //execute query
         $result = mysqli_query($connection, $query);
         $message = 'New category was created.';
+    }
+    else{
+        $message = 'Sorry, some error occurred.';
+    }
+
+    echo $message;
+}
+elseif($_SERVER['REQUEST_METHOD'] == "PUT") {
+    $isConverted = convertJsonObjToPostArray();
+
+
+    if($isConverted&&$_POST['cat_id']){
+        $categoryName = mysql_prep($_POST['categoryName']);
+        $idName = mysql_prep($_POST['idName']);
+        $cat_id = $_POST['cat_id'];
+
+
+        $query = "UPDATE main_categories SET ";
+        $query .= "categoryName = '{$categoryName}', ";
+        $query .= "idName = '{$idName}' ";
+        $query .= "WHERE cat_id = {$cat_id} ";
+        $query .= "LIMIT 1";
+//        print($query);
+
+
+        //execute query
+        $result = mysqli_query($connection, $query);
+        $message = 'Category name was updated.';
 
     }
     else{
@@ -63,7 +90,16 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 
     echo $message;
 }
+elseif($_SERVER['REQUEST_METHOD'] == "DELETE"){
+    $cat_id = $_GET['id'];
 
+    $query = "DELETE FROM main_categories WHERE cat_id = {$cat_id} LIMIT 1";
+    $result = mysqli_query($connection, $query);
+
+    $message = 'Category deleted.';
+    print $message;
+
+}
 
 // Close database connection
 mysqli_close($connection);

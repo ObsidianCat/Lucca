@@ -24,6 +24,10 @@ angular.module('luccaAdminApp')
                 controller:'manageCategoryController',
                 controllerAs:'manageCategoryCtrl'
             })
+            .when('/', {
+                templateUrl:'partials/dashboard-welcome.html'
+            })
             .otherwise({redirectTo:'/'
+
             });
     });

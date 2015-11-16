@@ -57,10 +57,7 @@ nav#main-menu button.md-button {
   width: 100%; }
 
 #edit {
-  width: 80%; }
-
-section#edit-item-wrapper,
-section#edit-category-wrapper {
+  width: 80%;
   padding: 0% 2% 0% 2%; }
 
 form {

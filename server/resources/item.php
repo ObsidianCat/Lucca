@@ -72,7 +72,7 @@ elseif($_SERVER['REQUEST_METHOD'] == "PUT") {
         $query .= "item_type = '{$item_type}' ";
         $query .= "WHERE item_id = {$item_id} ";
         $query .= "LIMIT 1";
-        print($query);
+//        print($query);
 
 
         //execute query
