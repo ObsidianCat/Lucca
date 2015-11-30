@@ -1,2 +1,7 @@
-<h1>Welcome, Admin</h1>
-<p>Please, choose your action from left sidebar.</p>
+<section id="welcome" ng-hide="actionMessage">
+    <h1>Welcome, Admin</h1>
+    <p>Please, choose your action from left sidebar.</p>
+</section>
+<section id="action-done" ng-show="actionMessage">
+    <p>{{actionMessage}}</p>
+</section>

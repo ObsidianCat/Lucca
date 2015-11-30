@@ -80,6 +80,8 @@ angular.module('luccaAdminApp').controller('manageItemController', function($htt
         $scope.itemForm.$setPristine();
         $scope.itemForm.$setUntouched();
         $scope.itemForm.$setSubmitted();
+        $location.path('/');
+
     };
 
 });

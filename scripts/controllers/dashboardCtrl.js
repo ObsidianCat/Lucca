@@ -5,14 +5,21 @@ angular.module('luccaAdminApp').controller('dashboardController', function(Categ
     $scope.menuToggleFlags = [];
     $scope.menuToggleFlags["categoriesMenu"] = false;
     //get categories for main menu
-    $rootScope.categories = $rootScope.categories|| GetData.returnedData.getObject({res:'categories'}).$promise.then(function(data) {
-        $rootScope.categories = data.response;
-        populateMenuToggler($rootScope.categories);
-    });
+    $rootScope.categories = $rootScope.categories|| reloadCategories();
+
+    $scope.clearMessage = function(){
+      $rootScope.actionMessage = null;
+    };
+
+    function reloadCategories(){
+        GetData.returnedData.getObject({res:'categories'}).$promise.then(function(data) {
+            $rootScope.categories = data.response;
+            populateMenuToggler($rootScope.categories);
+        });
+    }
 
     //create toogle property for given category
     function populateMenuToggler(menuData){
-
         for(var prop in menuData) {
             if(menuData[prop].hasOwnProperty('cat_id')){
                 var name = menuData[prop].idName;
@@ -40,13 +47,5 @@ angular.module('luccaAdminApp').controller('dashboardController', function(Categ
         }
     }
 
-    //watch for changes in toogle for submenu
-    $scope.$watchCollection('menuToggleFlags', function(newNames, oldNames) {
-        //console.log('object updated');
-        //console.log(newNames);
-        //console.log(oldNames);
-    });
-
-
-
+    $rootScope.$on('created',reloadCategories);
 });

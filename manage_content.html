@@ -44,7 +44,7 @@
     </header>
     <div layout="row" class="dashboard main-wrapper" ng-controller="dashboardController as dashboardCtrl">
         <nav id="main-menu">
-            <ul layout="column" id="main-categories" >
+            <ul layout="column" id="main-categories" ng-click="clearMessage()">
                 <li flex class="add-new-item">
                     <a flex href="#add-new-item">
                         <md-button flex class="md-raised md-cornered">

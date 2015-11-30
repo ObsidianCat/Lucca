@@ -1,10 +1,10 @@
 /**
  * Created by Lula on 11/13/2015.
  */
-angular.module('luccaAdminApp').controller('manageCategoryController', function($http,$rootScope, $scope, GetData,$routeParams, CategoriesTasks){
+angular.module('luccaAdminApp').controller('manageCategoryController', function($http,$rootScope, $scope, GetData,$routeParams, $location, CategoriesTasks){
     var categoryId = $routeParams.param;
     const CAT_RESOURCE_PATH = 'server/resources/categories.php';
-    const CAT_MESSAGE_WRAP_DOM_SELECTOR = "#edit-category-wrapper";
+    const MESSAGE_DOM_WRAPER_ERROR = "#edit-category-wrapper";
     $scope.param = 'categories';
     $scope.itemDataModel;
 
@@ -18,8 +18,6 @@ angular.module('luccaAdminApp').controller('manageCategoryController', function(
         //edit existing category
         $scope.categoryDataModel = GetData.returnedData.getObject({res:$scope.param, id:categoryId}).$promise.then(function(data){
             $scope.categoryDataModel = data.response[0];
-            //console.log($scope.categoryDataModel);
-
         });
     }
     else{
@@ -39,13 +37,14 @@ angular.module('luccaAdminApp').controller('manageCategoryController', function(
                 //update categories object manually
                 $rootScope.categories.push($scope.categoryDataModel);
 
-                $scope.submitCategorySuccess();
-                //show to user message about form submission
-                $(CAT_MESSAGE_WRAP_DOM_SELECTOR).text(response.data);
+                //tell that new category created
+                $rootScope.$broadcast('created', response.data);
+
+                $scope.submitCategorySuccess(response.data);
             }, function(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
-                $(CAT_MESSAGE_WRAP_DOM_SELECTOR).text(response.data);
+                $(MESSAGE_DOM_WRAPER_ERROR).prepend(response.data);
             });
     };
 
@@ -65,13 +64,11 @@ angular.module('luccaAdminApp').controller('manageCategoryController', function(
                 console.log(' $rootScope.categories');
                 console.log($rootScope.categories);
 
-                $scope.submitCategorySuccess();
-                //show to user message about form submission
-                $(CAT_MESSAGE_WRAP_DOM_SELECTOR).text(response.data);
+                $scope.submitCategorySuccess(response.data);
             }, function(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
-                $(CAT_MESSAGE_WRAP_DOM_SELECTOR).text(response.data);
+                $(MESSAGE_DOM_WRAPER_ERROR).prepend(response.data);
             });
     };
     $scope.deleteCategory = function(){
@@ -84,23 +81,23 @@ angular.module('luccaAdminApp').controller('manageCategoryController', function(
                 var categoryIndex = CategoriesTasks.findByPropertyAndReturnRef('cat_id',categoryId);
                 $rootScope.categories.splice(categoryIndex, 1);
 
-                $scope.submitCategorySuccess();
-                //show to user message about form submission
-                $(CAT_MESSAGE_WRAP_DOM_SELECTOR).text(response.data);
+                $scope.submitCategorySuccess(response.data);
             }, function(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
-                $(CAT_MESSAGE_WRAP_DOM_SELECTOR).text(response.data);
+                $(MESSAGE_DOM_WRAPER_ERROR).text(response.data);
             });
     };
 
     //bring form to initial state after submit
     //set form to submitted
-    $scope.submitCategorySuccess = function(){
+    $scope.submitCategorySuccess = function(message){
+        $rootScope.actionMessage = message;
         $scope.categoryDataModel={};
         $scope.categoryForm.$setPristine();
         $scope.categoryForm.$setUntouched();
         $scope.categoryForm.$setSubmitted();
+        $location.path('/');
     };
 
 });
