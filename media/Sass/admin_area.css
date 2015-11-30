@@ -55,6 +55,9 @@ nav#main-menu ul.sub-category-items {
     font-size: 0.8em; }
 nav#main-menu button.md-button {
   width: 100%; }
+nav#main-menu li.add-new-category button,
+nav#main-menu li.add-new-item button {
+  background-color: antiquewhite; }
 
 #edit {
   width: 80%;

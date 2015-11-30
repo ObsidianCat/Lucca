@@ -11,6 +11,11 @@ nav#main-menu{
   button.md-button{
     width: 100%;
   }
+
+  li.add-new-category button,
+  li.add-new-item button{
+      background-color: antiquewhite;
+  }
 }
 
 #edit{
