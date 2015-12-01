@@ -1,13 +1,13 @@
 /**
  * Created by Lula on 11/13/2015.
  */
-angular.module('luccaAdminApp').controller('manageCategoryController', function($http,$rootScope, $scope, GetData,$routeParams, $location, CategoriesTasks){
+angular.module('luccaAdminApp').controller('manageCategoryController', function($http,$rootScope, $scope, GetData,$routeParams, CategoriesTasks){
     var categoryId = $routeParams.param;
     const CAT_RESOURCE_PATH = 'server/resources/categories.php';
     const MESSAGE_DOM_WRAPER_ERROR = "#edit-category-wrapper";
     $scope.param = 'categories';
     $scope.itemDataModel;
-
+    //console.log('manage categorie controlles');
     function createIdName(name){
         var idName = name.toLowerCase();
         idName = idName.replace(/\s/g, "");
@@ -40,7 +40,7 @@ angular.module('luccaAdminApp').controller('manageCategoryController', function(
                 //tell that new category created
                 $rootScope.$broadcast('created', response.data);
 
-                $scope.submitCategorySuccess(response.data);
+                $scope.submitSuccess($scope.categoryDataModel, $scope.categoryForm, response.data);
             }, function(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
@@ -61,10 +61,10 @@ angular.module('luccaAdminApp').controller('manageCategoryController', function(
                 var categoryIndex = CategoriesTasks.findByPropertyAndReturnRef('cat_id',categoryData.cat_id );
                 $rootScope.categories[categoryIndex].categoryName = categoryData.categoryName;
                 $rootScope.categories[categoryIndex].idName = categoryData.idName;
-                console.log(' $rootScope.categories');
-                console.log($rootScope.categories);
+                //console.log(' $rootScope.categories');
+                //console.log($rootScope.categories);
 
-                $scope.submitCategorySuccess(response.data);
+                $scope.submitSuccess($scope.categoryDataModel, $scope.categoryForm, response.data);
             }, function(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
@@ -81,23 +81,11 @@ angular.module('luccaAdminApp').controller('manageCategoryController', function(
                 var categoryIndex = CategoriesTasks.findByPropertyAndReturnRef('cat_id',categoryId);
                 $rootScope.categories.splice(categoryIndex, 1);
 
-                $scope.submitCategorySuccess(response.data);
+                $scope.submitSuccess($scope.categoryDataModel, $scope.categoryForm, response.data);
             }, function(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
                 $(MESSAGE_DOM_WRAPER_ERROR).text(response.data);
             });
     };
-
-    //bring form to initial state after submit
-    //set form to submitted
-    $scope.submitCategorySuccess = function(message){
-        $rootScope.actionMessage = message;
-        $scope.categoryDataModel={};
-        $scope.categoryForm.$setPristine();
-        $scope.categoryForm.$setUntouched();
-        $scope.categoryForm.$setSubmitted();
-        $location.path('/');
-    };
-
 });

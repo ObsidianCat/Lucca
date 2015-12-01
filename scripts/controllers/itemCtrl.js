@@ -59,7 +59,7 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
     $scope.item = GetData.returnedData.getObject({res:$scope.param, id:itemId}).$promise.then(function(data){
         $scope.item = data;
         showAddressOnMap();
-        console.log($scope.item);
+        //console.log($scope.item);
     });
 
     $scope.setActiveImg = function($index){
@@ -67,7 +67,7 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
     };
 
     $scope.showHideToggler = function(targetName){
-        console.log($scope.showHideFlags[targetName]);
+        //console.log($scope.showHideFlags[targetName]);
         if($scope.showHideFlags[targetName]==false){
             $scope.showHideFlags[targetName]=true;
         }
@@ -80,7 +80,7 @@ angular.module('luccaApp').controller('itemController', function($scope, $http, 
     //submit review for current item
     $scope.submitReview = function(currentReview){
         currentReview.itemId =itemId;
-        console.log(currentReview);
+        //console.log(currentReview);
 
         $http.post('server/review_form_proceeding.php', currentReview).
             then(function(response) {

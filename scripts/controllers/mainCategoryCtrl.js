@@ -21,7 +21,7 @@ angular.module('luccaApp').controller('mainCategoryController', function($scope,
     $http.get(WEATHER_URL.C).
         success(function(data, status, headers, config) {
             $scope.weather = data;
-            console.log($scope.weather);
+            //console.log($scope.weather);
         }).
         error(function(data, status, headers, config) {
             // log error

@@ -1,3 +1,16 @@
+<?php
+if(!(isset($_SERVER['PHP_AUTH_USER']) &&
+    $_SERVER['PHP_AUTH_USER'] == 'lucca' &&
+    isset($_SERVER['PHP_AUTH_PW']) &&
+    $_SERVER['PHP_AUTH_PW'] == "lucca")) {
+//    echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}.</p>";
+//    echo "<p>You entered {$_SERVER['PHP_AUTH_PW']} as your password.</p>";
+    header('WWW-Authenticate: Basic realm="My Realm"');
+    header('HTTP/1.0 401 Unauthorized');
+    echo 'Text to send if user hits Cancel button';
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en" ng-app="luccaAdminApp">
 <head>
@@ -75,7 +88,7 @@
                 </li>
                 <li flex ng-repeat="category in categories" id="{{category.categoryName.toLowerCase()}}">
 
-                    <a flex href="#subcategory/{{category.idName}}" ng-click="getSubCategory(category.idName)">
+                    <a flex href="#subcategory/{{category.idName}}" ng-click="getItemsForCategory(category.idName)">
                         <md-button ng-disabled="category.idName !='churches'" flex class="md-raised md-cornered">
                             {{category.categoryName}}
                         </md-button>
