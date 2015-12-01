@@ -29,6 +29,10 @@
   md-card-content{
     padding: 0px 16px 0px 16px;
   }
+  .reviews .reviews-list md-card-content{
+    padding: 0rem;
+  }
+
   .item-titles {
     background-color: antiquewhite;
     cursor: pointer;
@@ -86,8 +90,27 @@ p.address{
     display: none;
   }
 
+
+
   .reviews-box {
-    background-color: rgb(253, 247, 238);
+    //background-color: rgb(253, 247, 238);
+  }
+
+
+  .review-item{
+    >*{
+      margin: 0.5em;
+    }
+    background-color: $c-bright-sand;
+    padding: 0.5rem 0 0.5rem 0;
+    background-color: #fdf7ee;
+    padding: 0.4rem 1rem;
+    /* margin: 1rem 0rem; */
+    border-bottom: 1px solid $c-bright-grey;
+
+    p.message{
+      margin: 1.5em 0.5em;
+    }
   }
 
   .add-new-review form input,

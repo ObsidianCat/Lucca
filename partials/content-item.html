@@ -79,23 +79,27 @@
             </md-card-content>
         </md-card>
 
-        <md-card>
+        <md-card class="reviews-list">
             <h3 class="md-title item-titles {{(showHideFlags.reviews==true) ? 'opened' : 'closed'}}"  ng-click="showHideToggler('reviews');" scroll-on-click>
                 Read visitors reviews
             </h3>
             <md-card-content>
                 <div class="reviews-box" ng-show="showHideFlags.reviews">
-                    <div class="reviews-sorting">
-                        <p class="selected">Show all reviews</p>
-                        <p>Show reviews only with rating of</p>
-                        <select>
-                            <option value="5">5 stars</option>
-                            <option value="4">4 stars</option>
-                            <option value="3">3 stars</option>
-                            <option value="2">2 stars</option>
-                            <option value="1">1 stars</option>
-                        </select>
-                </div>
+                    <!--removed until sorting of reviews will be implemented-->
+                    <!--<div class="reviews-sorting">-->
+                        <!--<p class="selected">Show all reviews</p>-->
+                        <!--<p>Show reviews only with rating of</p>-->
+                        <!--<select>-->
+                            <!--<option value="5">5 stars</option>-->
+                            <!--<option value="4">4 stars</option>-->
+                            <!--<option value="3">3 stars</option>-->
+                            <!--<option value="2">2 stars</option>-->
+                            <!--<option value="1">1 stars</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                    <!--<md-list>-->
+                        <!--<md-list-item class="md-3-line" review-item ng-repeat="review in item.response[1]"></md-list-item>-->
+                    <!--</md-list>-->
                     <review-item ng-repeat="review in item.response[1]"></review-item>
                 </div>
             </md-card-content>
