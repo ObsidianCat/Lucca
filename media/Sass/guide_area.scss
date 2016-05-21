@@ -136,6 +136,9 @@ section#weather_widget {
   img{
     display:block;
   }
+  p.weather-day-title{
+    color:$-brick-red-medium;
+  }
 }
 
 /*END Weather*/

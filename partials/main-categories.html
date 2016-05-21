@@ -15,7 +15,7 @@
     </p>
     <md-tabs md-dynamic-height md-border-bottom>
             <md-tab ng-repeat="weatherDay in weather.list">
-                <md-tab-label>{{weatherDates[$index]}}</md-tab-label>
+                <md-tab-label><p class="weather-day-title">{{weatherDates[$index]}}</p></md-tab-label>
                 <!--<div class="days-weather" >-->
                 <md-tab-body layout="column" >
                     <img ng-src="http://openweathermap.org/img/w/{{weatherDay.weather[0].icon}}.png"/>

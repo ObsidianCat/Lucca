@@ -132,6 +132,8 @@ section#weather_widget .weather-details {
   margin-right: 1rem; }
 section#weather_widget img {
   display: block; }
+section#weather_widget p.weather-day-title {
+  color: #770f01; }
 
 /*END Weather*/
 
